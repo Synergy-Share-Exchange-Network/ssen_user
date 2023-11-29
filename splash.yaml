@@ -1,6 +1,0 @@
-flutter_native_splash:
-  color : '#FFFFFF'
-  color_dark : '#272727'
-  image: asset\logo_image\Synergylight.png
-  image_dark: asset\logo_image\Synergydark.png
-  web : false 
