@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ssen_user/Screens/login.dart';
 import 'package:ssen_user/Screens/signup.dart';
 import 'package:ssen_user/screens/setting.dart';
+import 'package:ssen_user/screens/state%20pages/main_page.dart';
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: SappTheme.lightTheme,
       darkTheme: SappTheme.darkTheme,
-      home: Setting(),
+      home: MainPage();
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
