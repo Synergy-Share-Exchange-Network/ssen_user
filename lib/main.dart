@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ssen_user/Screens/login.dart';
 import 'package:ssen_user/Screens/signup.dart';
+import 'package:ssen_user/screens/about.dart';
 import 'package:ssen_user/screens/state%20pages/main_page.dart';
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
+
+import 'screens/terms and condition.dart';
 
 void main() {
   runApp(MyApp(
@@ -24,7 +27,9 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: SappTheme.lightTheme,
       darkTheme: SappTheme.darkTheme,
-      home: MainPage(),
+      home: const About(),
+      // home: const TermAndCondition(),
+      // home: MainPage(),
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
