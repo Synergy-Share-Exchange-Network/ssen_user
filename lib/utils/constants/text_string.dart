@@ -17,6 +17,11 @@ class SText {
   static const String iAgree = "I Agree with ";
   static const String privacy = "Privacy";
   static const String termCondition = "Term of Use ";
+  static const String verificationCode = "Verfication Code";
+  static const String verificationCodeDescription =
+      "We have sent the code verification to";
+  static const String verificationCodePhone = "+2519********2321";
+  static const String changePhoneNumber = "Change the PhoneNumber ?";
 
   //some important
   static const String rememberMe = 'RememberMe';

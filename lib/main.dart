@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: SappTheme.lightTheme,
       darkTheme: SappTheme.darkTheme,
-      home: MainPage(),
+      home: SignUp(),
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
