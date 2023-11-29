@@ -14,6 +14,9 @@ class SText {
   static const String signUpTitle = "Let's  Create Your account";
   static const String userName = "UserName";
   static const String phoneNumber = "PhoneNumber";
+  static const String iAgree = "I Agree with ";
+  static const String privacy = "Privacy";
+  static const String termCondition = "Term of Use ";
 
   //some important
   static const String rememberMe = 'RememberMe';
