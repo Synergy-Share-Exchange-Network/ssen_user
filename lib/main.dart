@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/app_theme.dart';
+import 'package:ssen_user/services/theme/app_theme.dart';
 
 void main() {
   runApp(MyApp(
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Synergy Share Exchange Network',
-      theme: AppThemes.appThemeData[AppTheme.lightTheme],
+      themeMode: ThemeMode.system,
+      theme: TappTheme.lightTheme,
+      darkTheme: TappTheme.darkTheme,
       home: const MyHomePage(title: 'Synergy Share Exchange Network User'),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
