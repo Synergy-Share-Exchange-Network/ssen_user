@@ -17,7 +17,7 @@ class SappTheme {
       textTheme: STextTheme.lightTextTheme,
       inputDecorationTheme: STextFieldTheme.lightInputDecorationTheme,
       checkboxTheme: SCheckBox.lightCheckBoxTheme,
-      elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtontheme,
+      elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtonTheme,
       outlinedButtonTheme: SOutlineButton.lightOutlinedButtonTheme);
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
@@ -28,6 +28,6 @@ class SappTheme {
       textTheme: STextTheme.darkTextTheme,
       inputDecorationTheme: STextFieldTheme.darkInputDecorationTheme,
       checkboxTheme: SCheckBox.darkCheckBoxTheme,
-      elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtontheme,
+      elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtonTheme,
       outlinedButtonTheme: SOutlineButton.darkOutlinedButtonTheme);
 }
