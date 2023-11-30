@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ssen_user/utils/constants/text_string.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
@@ -27,61 +28,51 @@ class About extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        decoration: const BoxDecoration(),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                'Our Company',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: const BoxDecoration(),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  SText.ourCompany,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar.',
-              ),
-              SizedBox(height: 24),
-              Text(
-                'Our Mission',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+                SizedBox(height: 16),
+                Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar.',
                 ),
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar.',
-              ),
-              SizedBox(height: 24),
-              Text(
-                'Our Team',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+                SizedBox(height: 24),
+                Text(
+                  SText.ourMission,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar.',
-              ),
-              SizedBox(height: 24),
-              Text(
-                'Contact Us',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+                SizedBox(height: 16),
+                Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar.',
                 ),
-              ),
-              SizedBox(height: 16),
-              Text(
-                'For any inquiries or questions, please contact us at example@example.com.',
-              ),
-            ],
+                SizedBox(height: 24),
+                Text(
+                  SText.ourTeam,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                SizedBox(height: 16),
+                Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar.',
+                ),
+                SizedBox(height: 24),
+                Text(
+                  SText.contactUs,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                SizedBox(height: 16),
+                Text(
+                  'For any inquiries or questions, please contact us at example@example.com.',
+                ),
+              ],
+            ),
           ),
         ),
       ),
