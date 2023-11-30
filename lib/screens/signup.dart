@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ssen_user/Screens/OTP_verification.dart';
 import 'package:ssen_user/utils/constants/size.dart';
 import 'package:ssen_user/utils/constants/text_string.dart';
 
@@ -131,7 +132,13 @@ class SignUp extends StatelessWidget {
                     SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                            onPressed: () {}, child: Text('Create Account')))
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OtpVerfication()));
+                            },
+                            child: Text('Create Account')))
                   ],
                 ),
               )

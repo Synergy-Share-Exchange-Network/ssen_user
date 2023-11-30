@@ -39,6 +39,11 @@ class SText {
   static const String ourMission = "Our Mission";
   static const String ourTeam = "Our Team";
   static const String contactUs = "Contact Us";
+  static const String verificationCode = "Verfication Code";
+  static const String verificationCodeDescription =
+      "We have sent the code verification to";
+  static const String verificationCodePhone = "+2519********2321";
+  static const String changePhoneNumber = "Change the PhoneNumber ?";
 
   //some important
   static const String rememberMe = 'RememberMe';
