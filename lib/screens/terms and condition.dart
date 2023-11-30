@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ssen_user/utils/constants/text_string.dart';
 
 class TermAndCondition extends StatelessWidget {
   const TermAndCondition({super.key});
@@ -32,13 +33,10 @@ class TermAndCondition extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'Introduction',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.introdunction,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -46,11 +44,8 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Acceptance',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.acceptance,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -58,69 +53,60 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'User Responsibilities',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.userResponsibilities,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'Age Restrictions:',
+                  SText.ageRestrictions,
                 ),
                 Text(
                   'You must be at least 18 years old to use this app or website.',
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Account Creation:',
+                  SText.accountCreation,
                 ),
                 Text(
                   'You are responsible for maintaining the confidentiality of your account credentials.',
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Prohibited Activities:',
+                  SText.prohibitedActivities,
                 ),
                 Text(
                   'You are not allowed to engage in any form of harassment, spamming, or illegal content sharing.',
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Content Ownership:',
+                  SText.contentOwnership,
                 ),
                 Text(
                   'You retain ownership of the content you post, but grant the app or website necessary licenses to display or use that content.',
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Intellectual Property',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.intellectualProperty,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'Copyright Notice:',
+                  SText.copyrightNotice,
                 ),
                 Text(
                   'All content provided by this app or website is protected by copyright laws.',
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Trademarks:',
+                  SText.trademarks,
                 ),
                 Text(
                   'The app or website trademarks are the property of their respective owners. Unauthorized use is prohibited.',
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Limitations of Liability',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.limitationsOfLiability,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -128,11 +114,8 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Privacy Policy',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.privacyPolicy,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -140,11 +123,8 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Modifications to Terms and Conditions',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.modificationsToTermsandConditions,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -152,11 +132,8 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Termination',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.termination,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -164,11 +141,8 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Governing Law',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.governingLaw,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -176,11 +150,8 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Contact Information',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.contactInformation,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -188,11 +159,8 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 Text(
-                  'Effective Date:',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SText.effectiveDate,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(

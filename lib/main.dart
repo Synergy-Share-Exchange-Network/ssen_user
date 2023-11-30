@@ -29,10 +29,10 @@ class MyApp extends StatelessWidget {
       theme: SappTheme.lightTheme,
       darkTheme: SappTheme.darkTheme,
 
-//       home: const About(),
+      home: const About(),
       // home: const TermAndCondition(),
       // home: MainPage(),
-      home: MainPage();
+      // home: MainPage(),
 
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,

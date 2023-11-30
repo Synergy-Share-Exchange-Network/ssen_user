@@ -17,6 +17,28 @@ class SText {
   static const String iAgree = "I Agree with ";
   static const String privacy = "Privacy";
   static const String termCondition = "Term of Use ";
+  static const String introdunction = "Introduction";
+  static const String acceptance = "Acceptance";
+  static const String userResponsibilities = "User Responsibilities";
+  static const String ageRestrictions = "Age Restrictions";
+  static const String accountCreation = "Account Creation";
+  static const String prohibitedActivities = "Prohibited Activities";
+  static const String contentOwnership = "Content Ownership";
+  static const String intellectualProperty = "Intellectual Property";
+  static const String copyrightNotice = "Copyright Notice";
+  static const String trademarks = "Trademarks";
+  static const String limitationsOfLiability = "Limitations of Liability";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String termination = "Termination";
+  static const String governingLaw = "Governing Law";
+  static const String contactInformation = "Contact Information";
+  static const String effectiveDate = "Effective Date";
+  static const String modificationsToTermsandConditions =
+      "Modifications to Terms and Conditions";
+  static const String ourCompany = "Our Company";
+  static const String ourMission = "Our Mission";
+  static const String ourTeam = "Our Team";
+  static const String contactUs = "Contact Us";
   static const String verificationCode = "Verfication Code";
   static const String verificationCodeDescription =
       "We have sent the code verification to";
