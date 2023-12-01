@@ -37,4 +37,6 @@ class SColors {
   static const Color softGrey = Color(0xFFF4f4f4);
   static const Color lighGrey = Color(0xFFF9f9f9);
   static const Color white = Color(0xFFFFFFFF);
+//request wubet permission to change it
+  static const Color homePageNavBar = Color(0xFF090916);
 }
