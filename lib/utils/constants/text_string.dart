@@ -22,6 +22,16 @@ class SText {
       "We have sent the code verification to";
   static const String verificationCodePhone = "+2519********2321";
   static const String changePhoneNumber = "Change the PhoneNumber ?";
+  //some information
+  static const String nationality = "Nationality";
+  static const String region = "Region";
+  static const String woreda = "Woreda";
+  static const String city = "City/Subcity";
+  static const String pricePerShare = "Price Per Share";
+  static const String noOfShare = "Number Of Share";
+  static const String percentage = "Percentage";
+  static const String checkingAccount = "Checking Sccount";
+  static const String savingAccount = "Saving Account";
 
   //some important
   static const String rememberMe = 'RememberMe';

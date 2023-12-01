@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ssen_user/Screens/components/home.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -12,7 +13,7 @@ class _MainPageState extends State<MainPage> {
   int currentIndex = 0;
   // final screens = [Home(), Subscription(), Favorite(), Cart(), Order()];
   final screens = [
-    Center(child: Text("1")),
+    Home(),
     Center(child: Text("2")),
     Center(child: Text("3")),
     Center(child: Text("4")),
@@ -28,6 +29,7 @@ class _MainPageState extends State<MainPage> {
           index: currentIndex,
         ),
         bottomNavigationBar: BottomNavigationBar(
+            elevation: 0,
             showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
             onTap: (index) => setState(() => currentIndex = index),
@@ -35,12 +37,12 @@ class _MainPageState extends State<MainPage> {
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.account_balance_rounded),
-                label: "Investment",
+                label: "Invest",
                 // backgroundColor: Colors.blue,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.list_alt_rounded),
-                label: "Subscribed",
+                label: "Subscrib",
                 // backgroundColor: Colors.blue
               ),
               BottomNavigationBarItem(
@@ -50,7 +52,7 @@ class _MainPageState extends State<MainPage> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.newspaper_rounded),
-                label: "Announcements",
+                label: "Announce",
                 // backgroundColor: Colors.blue
               ),
               BottomNavigationBarItem(
