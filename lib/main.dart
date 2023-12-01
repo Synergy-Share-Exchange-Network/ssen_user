@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ssen_user/Screens/login.dart';
+import 'package:ssen_user/Screens/partial%20screen/purchase.dart';
 import 'package:ssen_user/Screens/signup.dart';
 import 'package:ssen_user/screens/about.dart';
 import 'package:ssen_user/screens/components/home.dart';
@@ -32,11 +33,18 @@ class MyApp extends StatelessWidget {
       darkTheme: SappTheme.darkTheme,
 
       // home: const About(),
+
+      // home: const TermAndCondition(),
+      // home: MainPage(),
+     
+      // home: SignUp(),
+
       // home: const Home(),
       // home: const TermAndCondition(),
       // home: MainPage(),
       home: MainPage(),
       // home: const Subscribers(),
+
 
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,

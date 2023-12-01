@@ -9,16 +9,17 @@ import 'text_theme.dart';
 class SappTheme {
   SappTheme._();
   static ThemeData lightTheme = ThemeData(
-      useMaterial3: true,
-      fontFamily: 'Poppins',
-      brightness: Brightness.light,
-      primaryColor: Colors.blue,
-      scaffoldBackgroundColor: Colors.white,
-      textTheme: STextTheme.lightTextTheme,
-      inputDecorationTheme: STextFieldTheme.lightInputDecorationTheme,
-      checkboxTheme: SCheckBox.lightCheckBoxTheme,
-      elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtonTheme,
-      outlinedButtonTheme: SOutlineButton.lightOutlinedButtonTheme);
+    useMaterial3: true,
+    fontFamily: 'Poppins',
+    brightness: Brightness.light,
+    primaryColor: Colors.blue,
+    scaffoldBackgroundColor: Colors.white,
+    textTheme: STextTheme.lightTextTheme,
+    inputDecorationTheme: STextFieldTheme.lightInputDecorationTheme,
+    checkboxTheme: SCheckBox.lightCheckBoxTheme,
+    elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtonTheme,
+    outlinedButtonTheme: SOutlineButton.lightOutlinedButtonTheme,
+  );
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
       fontFamily: 'Poppins',
