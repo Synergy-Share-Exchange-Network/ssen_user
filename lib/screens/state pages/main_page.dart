@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ssen_user/screens/components/home.dart';
+import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/helper_function.dart';
-
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -17,7 +17,7 @@ class _MainPageState extends State<MainPage> {
   // final screens = [Home(), Subscription(), Favorite(), Cart(), Order()];
   final screens = [
     Home(),
-    Center(child: Text("2")),
+    Subscribers(),
     Center(child: Text("3")),
     Center(child: Text("4")),
     Center(child: Text("5")),
@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
           index: currentIndex,
         ),
         bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: (isDark)?SColors.homePageNavBar: Colors.white,
+            backgroundColor: (isDark) ? SColors.homePageNavBar : Colors.white,
             showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
             onTap: (index) => setState(() => currentIndex = index),
