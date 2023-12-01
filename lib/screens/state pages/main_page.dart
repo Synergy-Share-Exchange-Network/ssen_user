@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ssen_user/screens/components/home.dart';
+import 'package:ssen_user/utils/constants/colors.dart';
+import 'package:ssen_user/utils/helper_function.dart';
+
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -12,7 +16,7 @@ class _MainPageState extends State<MainPage> {
   int currentIndex = 0;
   // final screens = [Home(), Subscription(), Favorite(), Cart(), Order()];
   final screens = [
-    Center(child: Text("1")),
+    Home(),
     Center(child: Text("2")),
     Center(child: Text("3")),
     Center(child: Text("4")),
@@ -21,6 +25,8 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = SHelperFunction.isDarkMode(context);
+
     return Scaffold(
         // drawer: const CustomDrawer(),
         body: IndexedStack(
@@ -28,6 +34,7 @@ class _MainPageState extends State<MainPage> {
           index: currentIndex,
         ),
         bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: (isDark)?SColors.homePageNavBar: Colors.white,
             showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
             onTap: (index) => setState(() => currentIndex = index),
@@ -36,7 +43,7 @@ class _MainPageState extends State<MainPage> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.account_balance_rounded),
                 label: "Investment",
-                // backgroundColor: Colors.blue,
+                backgroundColor: SColors.primary,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.list_alt_rounded),
