@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+
 import 'package:ssen_user/Screens/login.dart';
 import 'package:ssen_user/Screens/partial%20screen/purchase.dart';
 import 'package:ssen_user/Screens/signup.dart';
+import 'package:ssen_user/Screens/state%20pages/mainPage/Buttomnavigation.dart';
 import 'package:ssen_user/screens/about.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/setting.dart';
-import 'package:ssen_user/screens/state%20pages/main_page.dart';
+
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
 
+import 'Screens/components/profile.dart';
+import 'Screens/post_share_secondary.dart';
+import 'Screens/profile.dart';
 import 'screens/terms and condition.dart';
 
 void main() {
@@ -36,16 +41,15 @@ class MyApp extends StatelessWidget {
 
       // home: const TermAndCondition(),
       // home: MainPage(),
-     
+
       // home: SignUp(),
 
-      // home: const Home(),
+      // home: HomePage(),
       // home: const TermAndCondition(),
       // home: MainPage(),
-      home: MainPage(),
+      // home: PostShareSecondary(),
       // home: const Subscribers(),
-
-
+      home: UserProfile(),
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );

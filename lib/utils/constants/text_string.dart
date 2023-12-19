@@ -54,7 +54,12 @@ class SText {
   static const String percentage = "Percentage";
   static const String checkingAccount = "Checking Sccount";
   static const String savingAccount = "Saving Account";
+  static const String perSharePrice = "Per Share Price";
+  static const String companyName = "Company Name";
 
   //some important
+  static const String profile = 'Profile';
+  static const String Editprofile = 'Edit Profile';
+  static const String shares = 'Shares :';
   static const String rememberMe = 'RememberMe';
 }
