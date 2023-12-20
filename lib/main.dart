@@ -8,6 +8,7 @@ import 'package:ssen_user/screens/about.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/setting.dart';
+import 'package:ssen_user/screens/state%20pages/main_page.dart';
 
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
@@ -46,10 +47,11 @@ class MyApp extends StatelessWidget {
 
       // home: HomePage(),
       // home: const TermAndCondition(),
-      // home: MainPage(),
+      home: MainPage(),
       // home: PostShareSecondary(),
       // home: const Subscribers(),
-      home: UserProfile(),
+      // home: UserProfile(),
+      // home: Announcment(),
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
