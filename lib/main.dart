@@ -16,6 +16,7 @@ import 'Screens/components/profile.dart';
 import 'Screens/post_share_secondary.dart';
 import 'Screens/profile.dart';
 import 'screens/terms and condition.dart';
+import 'screens/announcment.dart';
 
 void main() {
   runApp(MyApp(
@@ -49,7 +50,8 @@ class MyApp extends StatelessWidget {
       // home: MainPage(),
       // home: PostShareSecondary(),
       // home: const Subscribers(),
-      home: UserProfile(),
+      // home: UserProfile(),
+      home: Announcment(),
       // home: LoginScreen(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
