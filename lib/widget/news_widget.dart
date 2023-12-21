@@ -9,7 +9,7 @@ class NewsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 155,
+      height: 170,
       child: Column(
         children: [
           Container(
