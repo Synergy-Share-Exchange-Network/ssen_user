@@ -9,6 +9,7 @@ import 'package:ssen_user/screens/about.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/desktop_responsive.dart';
+
 import 'package:ssen_user/screens/history.dart';
 import 'package:ssen_user/screens/setting.dart';
 import 'package:ssen_user/screens/state%20pages/main_page.dart';
@@ -52,7 +53,9 @@ class MyApp extends StatelessWidget {
       // home: HomePage(),
       // home: const TermAndCondition(),
       // home: MainPage(),
-      // home: Intermediate(),
+
+      // home: DesktopResponsive(),
+      home: Intermediate(),
 
       // home: PostShareSecondary(),
       // home: const Subscribers(),
