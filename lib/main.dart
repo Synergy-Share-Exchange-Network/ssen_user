@@ -12,6 +12,7 @@ import 'package:ssen_user/screens/state%20pages/main_page.dart';
 
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
+import 'package:ssen_user/widget/history_widget.dart';
 
 import 'Screens/components/profile.dart';
 import 'Screens/post_share_secondary.dart';
@@ -47,12 +48,13 @@ class MyApp extends StatelessWidget {
 
       // home: HomePage(),
       // home: const TermAndCondition(),
-      home: MainPage(),
+      // home: MainPage(),
       // home: PostShareSecondary(),
       // home: const Subscribers(),
       // home: UserProfile(),
       // home: Announcment(),
       // home: LoginScreen(),
+      home: HistoryWidget(),
       onGenerateRoute: appRouter.onGenerateRoute,
     );
   }
