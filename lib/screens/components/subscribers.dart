@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/constants/image_Strings.dart';
 import 'package:ssen_user/utils/helper_function.dart';
@@ -17,26 +18,29 @@ class _SubscribersState extends State<Subscribers> {
     bool isDark = SHelperFunction.isDarkMode(context);
 
     return Scaffold(
-      appBar: AppBar(
-        actions: const [
-          Icon(Iconsax.notification),
-          SizedBox(
-            width: 10,
-          ),
-          Icon(Iconsax.search_normal),
-          SizedBox(
-            width: 20,
-          )
-        ],
-        backgroundColor: (!isDark) ? SColors.lighGrey : SColors.homePageNavBar,
-        leading: IconButton(
-            onPressed: () {
-              // Navigator.pop(context);
-            },
-            icon: const Icon(Icons.menu)),
+      appBar: (MediaQuery.of(context).size.width > phoneSize)
+          ? PreferredSize(preferredSize: Size.zero, child: AppBar())
+          : AppBar(
+              actions: const [
+                Icon(Iconsax.notification),
+                SizedBox(
+                  width: 10,
+                ),
+                Icon(Iconsax.search_normal),
+                SizedBox(
+                  width: 20,
+                )
+              ],
+              backgroundColor:
+                  (!isDark) ? SColors.lighGrey : SColors.homePageNavBar,
+              leading: IconButton(
+                  onPressed: () {
+                    // Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.menu)),
 
-        // elevation: 1,
-      ),
+              // elevation: 1,
+            ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -93,19 +97,25 @@ class _SubscribersState extends State<Subscribers> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Container(
-                width: MediaQuery.of(context).size.width,
+                // width: MediaQuery.of(context).size.width,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CustomChip(
                       icon: Iconsax.align_horizontally,
                       text: 'All',
                       isSelected: true,
                     ),
+                    SizedBox(
+                      width: 20,
+                    ),
                     CustomChip(
                       icon: Iconsax.people,
                       text: 'Public',
                       isSelected: false,
+                    ),
+                    SizedBox(
+                      width: 20,
                     ),
                     CustomChip(
                       icon: Iconsax.document1,
