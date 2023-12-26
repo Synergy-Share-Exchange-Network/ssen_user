@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ssen_user/Screens/edit_profile.dart';
+import 'package:ssen_user/services/theme/text_theme.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/constants/size.dart';
 import 'package:ssen_user/utils/constants/text_string.dart';
+
+import '../utils/helper_function.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -79,10 +82,6 @@ class UserProfile extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const Divider(),
-              const SizedBox(
-                height: 10,
-              ),
               ProfileMenuWidget(
                   endicon: true,
                   icon: Iconsax.eye,
@@ -90,7 +89,7 @@ class UserProfile extends StatelessWidget {
                   textcolor: Colors.blue,
                   title: 'Preview'),
               const SizedBox(
-                height: SSizes.spaceBtwItems / 2,
+                height: SSizes.spaceBtwItems,
               ),
               ProfileMenuWidget(
                   endicon: true,
@@ -99,7 +98,7 @@ class UserProfile extends StatelessWidget {
                   textcolor: Colors.blue,
                   title: 'Posts'),
               const SizedBox(
-                height: SSizes.spaceBtwItems / 2,
+                height: SSizes.spaceBtwItems,
               ),
               ProfileMenuWidget(
                   endicon: true,
@@ -108,7 +107,7 @@ class UserProfile extends StatelessWidget {
                   textcolor: Colors.blue,
                   title: 'Hisory'),
               const SizedBox(
-                height: SSizes.spaceBtwItems / 2,
+                height: SSizes.spaceBtwItems,
               ),
               ProfileMenuWidget(
                   endicon: true,
@@ -117,7 +116,7 @@ class UserProfile extends StatelessWidget {
                   textcolor: Colors.blue,
                   title: 'Setting'),
               const SizedBox(
-                height: SSizes.spaceBtwItems / 2,
+                height: SSizes.spaceBtwItems,
               ),
               ProfileMenuWidget(
                   endicon: false,
@@ -149,39 +148,49 @@ class ProfileMenuWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-        onTap: onpress,
-        leading: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            color: Colors.blue.withOpacity(0.1),
+    final dark = SHelperFunction.isDarkMode(context);
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+            width: 1, color: Colors.grey), // Adjust border properties as needed
+      ),
+      child: ListTile(
+          onTap: onpress,
+          leading: Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              color: Colors.blue.withOpacity(0.1),
+            ),
+            child: Icon(
+              icon,
+              color: SColors.primary,
+              size: 30,
+            ),
           ),
-          child: Icon(
-            icon,
-            color: SColors.primary,
-            size: 30,
+          title: Text(
+            title,
+            style: dark
+                ? STextTheme.darkTextTheme.bodyLarge
+                : STextTheme.lightTextTheme.bodyLarge,
           ),
-        ),
-        title: Text(
-          title,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        trailing: endicon
-            ? Container(
-                width: 30,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Colors.grey.withOpacity(0.1),
-                ),
-                child: const Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                  color: Colors.grey,
-                ),
-              )
-            : null);
+          trailing: endicon
+              ? Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Colors.grey.withOpacity(0.1),
+                  ),
+                  child: const Icon(
+                    Icons.arrow_forward_ios,
+                    size: 18,
+                    color: Colors.grey,
+                  ),
+                )
+              : null),
+    );
   }
 }
