@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/helper_function.dart';
+import 'package:ssen_user/widget/history_widget.dart';
 import 'package:ssen_user/widget/news_widget.dart';
 
-class Announcment extends StatelessWidget {
-  const Announcment({Key? key}) : super(key: key);
+class History extends StatelessWidget {
+  const History({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +40,25 @@ class Announcment extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
+            HistoryWidget(),
           ],
         ),
       ),
