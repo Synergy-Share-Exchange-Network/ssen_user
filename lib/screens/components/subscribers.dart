@@ -4,6 +4,7 @@ import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/constants/image_Strings.dart';
 import 'package:ssen_user/utils/helper_function.dart';
+import 'package:ssen_user/widget/subscription_widget.dart';
 
 class Subscribers extends StatefulWidget {
   const Subscribers({super.key});
@@ -134,6 +135,21 @@ class _SubscribersState extends State<Subscribers> {
                 ),
               ),
             ),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                  SubscriptionWidget(),
+                ],
+              ),
+            )
             // Column(
             //   children: [
             //     // Product(

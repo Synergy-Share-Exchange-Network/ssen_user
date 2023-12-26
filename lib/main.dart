@@ -16,6 +16,7 @@ import 'package:ssen_user/screens/state%20pages/main_page.dart';
 
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
+import 'package:ssen_user/widget/company_profile_widget.dart';
 import 'package:ssen_user/widget/history_widget.dart';
 
 import 'Screens/components/profile.dart';
@@ -62,7 +63,11 @@ class MyApp extends StatelessWidget {
       // home: UserProfile(),
       // home: Announcment(),
       // home: LoginScreen(),
-      home: History(),
+
+      // home: HistoryWidget(),
+      home: Subscribers(),
+      // home: CompanyProfileWidget(),
+
       onGenerateRoute: appRouter.onGenerateRoute,
     );
   }
