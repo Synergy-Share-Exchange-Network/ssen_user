@@ -5,6 +5,7 @@ import 'package:ssen_user/Screens/partial%20screen/purchase.dart';
 import 'package:ssen_user/Screens/signup.dart';
 import 'package:ssen_user/Screens/state%20pages/mainPage/Buttomnavigation.dart';
 import 'package:ssen_user/intermediate.dart';
+
 import 'package:ssen_user/screens/about.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
@@ -19,6 +20,7 @@ import 'package:ssen_user/services/theme/app_theme.dart';
 import 'package:ssen_user/widget/company_profile_widget.dart';
 import 'package:ssen_user/widget/history_widget.dart';
 
+import 'Screens/company_profile_detail.dart';
 import 'Screens/components/profile.dart';
 import 'Screens/post_share_secondary.dart';
 import 'Screens/profile.dart';
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
       // home: SignUp(),
 
       // home: HomePage(),
+      home: Companyprofile(),
+      // home: Purchase(),
       // home: const TermAndCondition(),
       // home: MainPage(),
 
@@ -61,7 +65,7 @@ class MyApp extends StatelessWidget {
       // home: PostShareSecondary(),
       // home: const Subscribers(),
       // home: UserProfile(),
-      // home: Announcment(),
+
       // home: LoginScreen(),
 
       // home: HistoryWidget(),
