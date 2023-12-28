@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:ssen_user/Screens/login.dart';
 import 'package:ssen_user/Screens/partial%20screen/purchase.dart';
 import 'package:ssen_user/Screens/signup.dart';
-import 'package:ssen_user/Screens/state%20pages/mainPage/Buttomnavigation.dart';
 import 'package:ssen_user/intermediate.dart';
 
 import 'package:ssen_user/screens/about.dart';
@@ -12,6 +11,7 @@ import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/desktop_responsive.dart';
 
 import 'package:ssen_user/screens/history.dart';
+import 'package:ssen_user/screens/search/search_screen.dart';
 import 'package:ssen_user/screens/setting.dart';
 import 'package:ssen_user/screens/state%20pages/main_page.dart';
 
@@ -54,13 +54,14 @@ class MyApp extends StatelessWidget {
       // home: SignUp(),
 
       // home: HomePage(),
-      home: Companyprofile(),
+      // home: Companyprofile(),
       // home: Purchase(),
       // home: const TermAndCondition(),
       // home: MainPage(),
 
       // home: DesktopResponsive(),
-      home: Intermediate(),
+      // home: Intermediate(),
+      home: SearchScreen(),
 
       // home: PostShareSecondary(),
       // home: const Subscribers(),
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
       // home: LoginScreen(),
 
       // home: HistoryWidget(),
-      home: Subscribers(),
+      // home: Subscribers(),
       // home: CompanyProfileWidget(),
 
       onGenerateRoute: appRouter.onGenerateRoute,

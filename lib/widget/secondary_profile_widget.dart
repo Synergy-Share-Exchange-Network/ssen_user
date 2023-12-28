@@ -7,8 +7,8 @@ import 'package:ssen_user/utils/constants/colors.dart';
 
 import '../../services/theme/text_theme.dart';
 
-class CompanyProfileWidget extends StatelessWidget {
-  const CompanyProfileWidget({Key? key}) : super(key: key);
+class SecondaryProfileWidget extends StatelessWidget {
+  const SecondaryProfileWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +44,18 @@ class CompanyProfileWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Habesha Breweries ",
+                  Text("Dawit Negus",
                       style: STextTheme.lightTextTheme.headlineSmall),
                   Row(
                     children: [
-                      // const Icon(
-                      //   Iconsax.location,
-                      //   // color: Colors.black,
-                      //   size: 12,
-                      // ),
-                      // const SizedBox(
-                      //   width: 3,
-                      // ),
+                      const Icon(
+                        Iconsax.location,
+                        // color: Colors.black,
+                        size: 12,
+                      ),
+                      const SizedBox(
+                        width: 3,
+                      ),
                       Text(
                         "Addis Ababa, Ethiopia",
                         // style: STextTheme.lightTextTheme.bodySmall
@@ -69,48 +69,42 @@ class CompanyProfileWidget extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                        decoration: BoxDecoration(
-                            color: Colors.lightBlue,
-                            borderRadius: BorderRadius.circular(3)),
-                        child: Text("Food and Beverage",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 12)),
+                      Row(
+                        children: [
+                          const Icon(
+                            Iconsax.personalcard4,
+                            color: Colors.blue,
+                            size: 15,
+                          ),
+                          const SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            "10k+ shares",
+                            style: STextTheme.lightTextTheme.bodySmall!
+                                .copyWith(color: Colors.blue),
+                          ),
+                        ],
                       ),
                       SizedBox(
-                        width: 5,
+                        width: 10,
                       ),
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                        decoration: BoxDecoration(
-                            color: Colors.lightBlue,
-                            borderRadius: BorderRadius.circular(3)),
-                        child: Text("Brewery",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 12)),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 2,
-                  ),
-                  Row(
-                    children: [
-                      // const Icon(
-                      //   Iconsax.dollar_circle,
-                      //   color: Colors.grey,
-                      //   size: 10,
-                      // ),
-                      // const SizedBox(
-                      //   width: 3,
-                      // ),
-                      Text(
-                        "10k+ shares",
-                        style: STextTheme.lightTextTheme.bodySmall!
-                            .copyWith(color: Colors.blue),
+                      Row(
+                        children: [
+                          const Icon(
+                            Iconsax.dollar_circle,
+                            color: Colors.blue,
+                            size: 15,
+                          ),
+                          const SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            "1M Invested",
+                            style: STextTheme.lightTextTheme.bodySmall!
+                                .copyWith(color: Colors.blue),
+                          ),
+                        ],
                       ),
                     ],
                   ),
