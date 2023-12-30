@@ -6,13 +6,12 @@ class TestimonialModel {
   final String testimony;
   List<String> image;
 
-  TestimonialModel(
-      {required this.name,
-      required this.position,
-      required this.testimony,
-      image,
-      areYouOkay})
-      : image = image ?? [''];
+  TestimonialModel({
+    required this.name,
+    required this.position,
+    required this.testimony,
+    image,
+  }) : image = image ?? [''];
 
   TestimonialModel copyWith({
     String? name,
