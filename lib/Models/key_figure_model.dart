@@ -1,21 +1,25 @@
 import 'dart:convert';
 
 class KeyFigureModel {
+  final String identification;
   final String name;
   final String position;
   List<String> image;
   KeyFigureModel({
+    required this.identification,
     required this.name,
     required this.position,
     image,
   }) : image = image ?? [''];
 
   KeyFigureModel copyWith({
+    String? identification,
     String? name,
     String? position,
     List<String>? image,
   }) {
     return KeyFigureModel(
+      identification: identification ?? this.identification,
       name: name ?? this.name,
       position: position ?? this.position,
       image: image ?? this.image,
@@ -25,6 +29,7 @@ class KeyFigureModel {
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
 
+    result.addAll({'identification': identification});
     result.addAll({'name': name});
     result.addAll({'position': position});
     result.addAll({'image': image});
@@ -34,6 +39,7 @@ class KeyFigureModel {
 
   factory KeyFigureModel.fromMap(Map<String, dynamic> map) {
     return KeyFigureModel(
+      identification: map['identification'] ?? '',
       name: map['name'] ?? '',
       position: map['position'] ?? '',
       image: List<String>.from(map['image']),
@@ -47,5 +53,5 @@ class KeyFigureModel {
 
   @override
   String toString() =>
-      'KeyFigureModel(name: $name, position: $position, image: $image)';
+      'KeyFigureModel(identification:$identification,  name: $name, position: $position, image: $image)';
 }

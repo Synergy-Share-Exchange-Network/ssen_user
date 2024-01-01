@@ -2,18 +2,22 @@ import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class WhyInvestModel {
+  String identification;
   String title;
   String description;
   WhyInvestModel({
+    required this.identification,
     required this.title,
     required this.description,
   });
 
   WhyInvestModel copyWith({
+    String? identification,
     String? title,
     String? description,
   }) {
     return WhyInvestModel(
+      identification: identification ?? this.identification,
       title: title ?? this.title,
       description: description ?? this.description,
     );
@@ -21,6 +25,7 @@ class WhyInvestModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'identification': identification,
       'title': title,
       'description': description,
     };
@@ -28,6 +33,7 @@ class WhyInvestModel {
 
   factory WhyInvestModel.fromMap(Map<String, dynamic> map) {
     return WhyInvestModel(
+      identification: map['identification'] as String,
       title: map['title'] as String,
       description: map['description'] as String,
     );
@@ -40,5 +46,5 @@ class WhyInvestModel {
 
   @override
   String toString() =>
-      'WhyInvestModel(title: $title, description: $description)';
+      'WhyInvestModel(identification:$identification,  title: $title, description: $description)';
 }

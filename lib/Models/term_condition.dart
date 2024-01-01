@@ -2,18 +2,22 @@ import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class TermConditionModel {
+  String identification;
   String title;
   String description;
   TermConditionModel({
+    required this.identification,
     required this.title,
     required this.description,
   });
 
   TermConditionModel copyWith({
+    String? identification,
     String? title,
     String? description,
   }) {
     return TermConditionModel(
+      identification: identification ?? this.identification,
       title: title ?? this.title,
       description: description ?? this.description,
     );
@@ -21,6 +25,7 @@ class TermConditionModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'identification': identification,
       'title': title,
       'description': description,
     };
@@ -28,6 +33,7 @@ class TermConditionModel {
 
   factory TermConditionModel.fromMap(Map<String, dynamic> map) {
     return TermConditionModel(
+      identification: map['identification'] as String,
       title: map['title'] as String,
       description: map['description'] as String,
     );
@@ -40,5 +46,5 @@ class TermConditionModel {
 
   @override
   String toString() =>
-      'TermConditionModel(title: $title, description: $description)';
+      'TermConditionModel(identification:$identification,  title: $title, description: $description)';
 }

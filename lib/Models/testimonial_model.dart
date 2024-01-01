@@ -1,12 +1,14 @@
 import 'dart:convert';
 
 class TestimonialModel {
+  final String identification;
   final String name;
   final String position;
   final String testimony;
   List<String> image;
 
   TestimonialModel({
+    required this.identification,
     required this.name,
     required this.position,
     required this.testimony,
@@ -14,12 +16,14 @@ class TestimonialModel {
   }) : image = image ?? [''];
 
   TestimonialModel copyWith({
+    String? identification,
     String? name,
     String? position,
     String? testimony,
     List<String>? image,
   }) {
     return TestimonialModel(
+        identification: identification ?? this.identification,
         name: name ?? this.name,
         position: position ?? this.position,
         testimony: testimony ?? this.testimony,
@@ -29,6 +33,7 @@ class TestimonialModel {
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
 
+    result.addAll({'identification': identification});
     result.addAll({'name': name});
     result.addAll({'position': position});
     result.addAll({'testimony': testimony});
@@ -39,6 +44,7 @@ class TestimonialModel {
 
   factory TestimonialModel.fromMap(Map<String, dynamic> map) {
     return TestimonialModel(
+        identification: map['identification'] ?? '',
         name: map['name'] ?? '',
         position: map['position'] ?? '',
         testimony: map['testimony'] ?? '',
@@ -52,6 +58,6 @@ class TestimonialModel {
 
   @override
   String toString() {
-    return 'TestimonialModel(name: $name, position: $position, testimony: $testimony, image: $image)';
+    return 'TestimonialModel(identification:$identification, name: $name, position: $position, testimony: $testimony, image: $image)';
   }
 }
