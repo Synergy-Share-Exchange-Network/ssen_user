@@ -6,6 +6,7 @@ import 'package:ssen_user/Screens/signup.dart';
 import 'package:ssen_user/intermediate.dart';
 
 import 'package:ssen_user/screens/about.dart';
+import 'package:ssen_user/screens/components/announcement.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/desktop_responsive.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
       darkTheme: SappTheme.darkTheme,
 
       // home: const About(),
+      home: const Announcment(),
 
       // home: const TermAndCondition(),
       // home: MainPage(),
@@ -61,7 +63,7 @@ class MyApp extends StatelessWidget {
 
       // home: DesktopResponsive(),
       // home: Intermediate(),
-      home: SearchScreen(),
+      // home: SearchScreen(),
 
       // home: PostShareSecondary(),
       // home: const Subscribers(),

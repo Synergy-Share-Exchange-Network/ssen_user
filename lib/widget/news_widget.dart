@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:ssen_user/Models/announcement_model.dart';
 
 class NewsWidget extends StatelessWidget {
-  const NewsWidget({Key? key}) : super(key: key);
+  const NewsWidget({
+    Key? key,
+    required this.announcement,
+  }) : super(key: key);
+  final AnnouncementModel announcement;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 170,
+      height: 175,
       child: Column(
         children: [
           Container(
@@ -24,7 +29,7 @@ class NewsWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("asset/logo_image/goat.jpg"))),
+                            image: AssetImage(announcement.images[0]))),
                   ),
                 ),
                 Expanded(
@@ -37,12 +42,12 @@ class NewsWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Major Milestone Reached!",
+                          announcement.title,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         Container(
                           child: Text(
-                            "June 12   16:30",
+                            announcement.publishDate,
                             style: TextStyle(color: Colors.grey, fontSize: 10),
                           ),
                         ),
@@ -53,7 +58,7 @@ class NewsWidget extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.6,
                           // height: 90,
                           child: Text(
-                            "The International Finance Corporation (IFC) announced an investment of up to € 50 million in Habesha Breweries S.C. in a press release earlier this week. ",
+                            announcement.content,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 3,
                           ),

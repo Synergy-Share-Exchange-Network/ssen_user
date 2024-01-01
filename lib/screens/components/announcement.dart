@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ssen_user/Models/announcement_model.dart';
 import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/helper_function.dart';
@@ -13,6 +14,13 @@ class Announcment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark = SHelperFunction.isDarkMode(context);
+    AnnouncementModel announcement = AnnouncementModel(
+        identification: "11",
+        content:
+            "bitcoin is blomming the social and nural netork before someoe else fount it it is coing  my name is birhan I'm writing this from bottm of my heart.",
+        companyID: "companyID",
+        title: "cripto is reaching 1Billion people",
+        images: ["asset/logo_image/goat.jpg"]);
 
     return Scaffold(
       appBar: (MediaQuery.of(context).size.width > phoneSize)
@@ -41,16 +49,15 @@ class Announcment extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
-            NewsWidget(),
+            NewsWidget(
+              announcement: announcement,
+            ),
+            NewsWidget(
+              announcement: announcement,
+            ),
+            NewsWidget(
+              announcement: announcement,
+            ),
           ],
         ),
       ),
