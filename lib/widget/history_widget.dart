@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:ssen_user/utils/constants/custom_text_style.dart';
 
 class HistoryWidget extends StatelessWidget {
@@ -48,7 +45,7 @@ class HistoryWidget extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Text(
                       "view more",
                       style: TextStyle(color: Colors.blue, fontSize: 13),
