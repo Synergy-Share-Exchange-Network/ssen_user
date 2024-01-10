@@ -5,21 +5,28 @@ class TermConditionModel {
   String identification;
   String title;
   String description;
+  String companyId;
   TermConditionModel({
-    required this.identification,
-    required this.title,
-    required this.description,
-  });
+    identification,
+    title,
+    description,
+    companyId,
+  })  : identification = identification ?? '',
+        title = title ?? '',
+        description = description ?? '',
+        companyId = companyId ?? '';
 
   TermConditionModel copyWith({
     String? identification,
     String? title,
     String? description,
+    String? companyId,
   }) {
     return TermConditionModel(
       identification: identification ?? this.identification,
       title: title ?? this.title,
       description: description ?? this.description,
+      companyId: companyId ?? this.companyId,
     );
   }
 
@@ -28,6 +35,7 @@ class TermConditionModel {
       'identification': identification,
       'title': title,
       'description': description,
+      'companyId': companyId,
     };
   }
 
@@ -36,6 +44,7 @@ class TermConditionModel {
       identification: map['identification'] as String,
       title: map['title'] as String,
       description: map['description'] as String,
+      companyId: map['companyId'] as String,
     );
   }
 
@@ -46,5 +55,10 @@ class TermConditionModel {
 
   @override
   String toString() =>
-      'TermConditionModel(identification:$identification,  title: $title, description: $description)';
+      'TermConditionModel(identification:$identification,  title: $title, description: $description, companyId: $companyId)';
+}
+
+void main(List<String> args) {
+  TermConditionModel x = TermConditionModel();
+  print(x.toJson());
 }

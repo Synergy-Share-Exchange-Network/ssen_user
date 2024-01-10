@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class CompanyProfileModel {
-  final String identification;
+  String identification;
   final String name;
   final String businessSector;
   final String lineOfBusiness;
@@ -47,12 +47,12 @@ class CompanyProfileModel {
   bool hide;
   bool ban;
   CompanyProfileModel({
-    required this.identification,
     required this.name,
     required this.businessSector,
     required this.lineOfBusiness,
     required this.yearOfEstablishment,
     required this.email,
+    identification,
     motto,
     shareID,
     description,
@@ -90,7 +90,8 @@ class CompanyProfileModel {
     delete,
     hide,
     ban,
-  })  : motto = motto ?? '',
+  })  : identification = identification ?? '',
+        motto = motto ?? '',
         shareID = shareID ?? '',
         description = description ?? '',
         mission = mission ?? '',
