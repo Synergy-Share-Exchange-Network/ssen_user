@@ -162,8 +162,8 @@ class UserModel {
   }
 }
 
-void main(List<String> args) {
-  UserModel x = UserModel(
-      firstName: 'birhan', lastName: 'mulugeta', phoneNumber: '09876543');
-  print(x.toMap());
-}
+// void main(List<String> args) {
+//   UserModel x = UserModel(
+//       firstName: 'birhan', lastName: 'mulugeta', phoneNumber: '09876543');
+//   print(x.toMap());
+// }

@@ -104,11 +104,12 @@ class _SearchScreenState extends State<SearchScreen> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  SecondaryProfileWidget(),
-                  SecondaryProfileWidget(),
-                  SecondaryProfileWidget(),
-                  SecondaryProfileWidget(),
-                  SecondaryProfileWidget(),
+                  CompanyProfileWidget(),
+                  CompanyProfileWidget(),
+                  CompanyProfileWidget(),
+                  CompanyProfileWidget(),
+                  CompanyProfileWidget(),
+                  CompanyProfileWidget(),
                 ],
               ),
             )

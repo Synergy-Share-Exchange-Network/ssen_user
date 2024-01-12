@@ -61,11 +61,11 @@ class HistoryModel {
       'HistoryModel(identification:$identification,  title: $title, description: $description,  userId: $userId,  historyDate: $historyDate)';
 }
 
-void main(List<String> args) {
-  HistoryModel x = HistoryModel(
-      title: 'habesha beer',
-      description: 'description',
-      userId: '123',
-      historyDate: 'historyDate');
-  print(x.toJson());
-}
+// void main(List<String> args) {
+//   HistoryModel x = HistoryModel(
+//       title: 'habesha beer',
+//       description: 'description',
+//       userId: '123',
+//       historyDate: 'historyDate');
+//   print(x.toJson());
+// }

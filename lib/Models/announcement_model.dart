@@ -87,7 +87,7 @@ class AnnouncementModel {
   }
 }
 
-void main(List<String> args) {
-  AnnouncementModel x = AnnouncementModel(content: 'content');
-  print(x.toJson());
-}
+// void main(List<String> args) {
+//   AnnouncementModel x = AnnouncementModel(content: 'content');
+//   print(x.toMap());
+// }

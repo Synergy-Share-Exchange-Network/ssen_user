@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ssen_user/services/theme/text_theme.dart';
 import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/helper_function.dart';
+import 'package:ssen_user/widget/share_widget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -87,14 +89,18 @@ class _HomeState extends State<Home> {
                 ),
                 // elevation: 1,
               ),
-        body: TabBarView(children: [
-          Container(
-            color: SColors.darkerGery,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+            ],
           ),
-          Container(),
-          Container(),
-          Container()
-        ]),
+        ),
       ),
     );
   }

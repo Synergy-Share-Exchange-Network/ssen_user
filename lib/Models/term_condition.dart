@@ -57,8 +57,3 @@ class TermConditionModel {
   String toString() =>
       'TermConditionModel(identification:$identification,  title: $title, description: $description, companyId: $companyId)';
 }
-
-void main(List<String> args) {
-  TermConditionModel x = TermConditionModel();
-  print(x.toJson());
-}

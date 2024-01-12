@@ -63,8 +63,3 @@ class KeyFigureModel {
   String toString() =>
       'KeyFigureModel(identification:$identification,  name: $name, position: $position, image: $image, companyId: $companyId)';
 }
-
-void main(List<String> args) {
-  KeyFigureModel x = KeyFigureModel(name: 'name', position: 'position');
-  print(x.toJson());
-}
