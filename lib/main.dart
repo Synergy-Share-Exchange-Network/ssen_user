@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
       darkTheme: SappTheme.darkTheme,
 
       // home: const About(),
-      home: const Announcment(),
+      // home: const Announcment(),
 
       // home: const TermAndCondition(),
       // home: MainPage(),
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
       // home: Companyprofile(),
       // home: Purchase(),
       // home: const TermAndCondition(),
-      // home: MainPage(),
+      home: MainPage(),
 
       // home: DesktopResponsive(),
       // home: Intermediate(),

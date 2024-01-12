@@ -70,8 +70,8 @@ class TestimonialModel {
   }
 }
 
-void main(List<String> args) {
-  TestimonialModel x =
-      TestimonialModel(name: 'birhan', position: 'ceo', testimony: 'testimony');
-  print(x.toJson());
-}
+// void main(List<String> args) {
+//   TestimonialModel x =
+//       TestimonialModel(name: 'birhan', position: 'ceo', testimony: 'testimony');
+//   print(x.toJson());
+// }

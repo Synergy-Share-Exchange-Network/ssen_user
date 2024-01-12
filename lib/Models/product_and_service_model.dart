@@ -73,8 +73,3 @@ class ProductModel {
     return 'ProductModel(identification: $identification, companyId: $companyId, title: $title, description: $description, role: $role, image: $image)';
   }
 }
-
-void main(List<String> args) {
-  ProductModel x = ProductModel();
-  print(x.toJson());
-}

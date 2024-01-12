@@ -57,8 +57,3 @@ class FaqModel {
   String toString() =>
       'FaqModel(identification:$identification,  title: $title, description: $description,  companyId: $companyId)';
 }
-
-void main(List<String> args) {
-  FaqModel x = FaqModel();
-  print(x.toJson());
-}
