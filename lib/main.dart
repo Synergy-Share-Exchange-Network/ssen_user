@@ -6,6 +6,8 @@ import 'package:ssen_user/Screens/signup.dart';
 import 'package:ssen_user/intermediate.dart';
 
 import 'package:ssen_user/screens/about.dart';
+import 'package:ssen_user/screens/change%20email/enter_new_password.dart';
+import 'package:ssen_user/screens/change%20password/enter_new_password.dart';
 import 'package:ssen_user/screens/components/announcement.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
@@ -48,7 +50,9 @@ class MyApp extends StatelessWidget {
       darkTheme: SappTheme.darkTheme,
 
       // home: const About(),
-      home: const Announcment(),
+      // home: const Announcment(),
+      // home: EnterNewPassword(),
+      home: EnterNewEmail(),
 
       // home: const TermAndCondition(),
       // home: MainPage(),
