@@ -5,21 +5,28 @@ class WhyInvestModel {
   String identification;
   String title;
   String description;
+  String companyId;
   WhyInvestModel({
-    required this.identification,
-    required this.title,
-    required this.description,
-  });
+    identification,
+    title,
+    description,
+    companyId,
+  })  : identification = identification ?? '',
+        title = title ?? '',
+        description = description ?? '',
+        companyId = companyId ?? '';
 
   WhyInvestModel copyWith({
     String? identification,
     String? title,
     String? description,
+    String? companyId,
   }) {
     return WhyInvestModel(
       identification: identification ?? this.identification,
       title: title ?? this.title,
       description: description ?? this.description,
+      companyId: companyId ?? this.companyId,
     );
   }
 
@@ -28,6 +35,7 @@ class WhyInvestModel {
       'identification': identification,
       'title': title,
       'description': description,
+      'companyId': companyId,
     };
   }
 
@@ -36,6 +44,7 @@ class WhyInvestModel {
       identification: map['identification'] as String,
       title: map['title'] as String,
       description: map['description'] as String,
+      companyId: map['companyId'] as String,
     );
   }
 
@@ -46,5 +55,10 @@ class WhyInvestModel {
 
   @override
   String toString() =>
-      'WhyInvestModel(identification:$identification,  title: $title, description: $description)';
+      'WhyInvestModel(identification:$identification,  title: $title, description: $description, companyId: $companyId)';
 }
+
+// void main(List<String> args) {
+//   WhyInvestModel x = WhyInvestModel();
+//   print(x.toJson());
+// }

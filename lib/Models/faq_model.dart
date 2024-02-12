@@ -5,21 +5,28 @@ class FaqModel {
   String identification;
   String title;
   String description;
+  String companyId;
   FaqModel({
-    required this.identification,
-    required this.title,
-    required this.description,
-  });
+    identification,
+    title,
+    description,
+    companyId,
+  })  : identification = identification ?? '',
+        title = title ?? '',
+        description = description ?? '',
+        companyId = companyId ?? '';
 
   FaqModel copyWith({
     String? identification,
     String? title,
     String? description,
+    String? companyId,
   }) {
     return FaqModel(
       identification: identification ?? this.identification,
       title: title ?? this.title,
       description: description ?? this.description,
+      companyId: companyId ?? this.companyId,
     );
   }
 
@@ -28,6 +35,7 @@ class FaqModel {
       'identification': identification,
       'title': title,
       'description': description,
+      'companyId': companyId,
     };
   }
 
@@ -36,6 +44,7 @@ class FaqModel {
       identification: map['identification'] as String,
       title: map['title'] as String,
       description: map['description'] as String,
+      companyId: map['companyId'] as String,
     );
   }
 
@@ -46,5 +55,5 @@ class FaqModel {
 
   @override
   String toString() =>
-      'FaqModel(identification:$identification,  title: $title, description: $description)';
+      'FaqModel(identification:$identification,  title: $title, description: $description,  companyId: $companyId)';
 }

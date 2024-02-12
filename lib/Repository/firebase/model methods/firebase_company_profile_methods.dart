@@ -1,4 +1,4 @@
-import 'package:ssen_user/Models/company_profile-model.dart';
+import 'package:ssen_user/Models/company_profile_model.dart';
 import 'package:ssen_user/Repository/firebase/model%20abstract/firebase_company_profile_abstract.dart';
 
 class FirebaseCompanyProfileMethods extends FirebaseCompanyProfileAbstract {

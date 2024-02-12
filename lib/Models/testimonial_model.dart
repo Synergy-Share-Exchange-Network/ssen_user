@@ -1,25 +1,30 @@
 import 'dart:convert';
 
 class TestimonialModel {
-  final String identification;
+  String identification;
   final String name;
   final String position;
   final String testimony;
+  String companyId;
   List<String> image;
 
   TestimonialModel({
-    required this.identification,
     required this.name,
     required this.position,
     required this.testimony,
+    companyId,
+    identification,
     image,
-  }) : image = image ?? [''];
+  })  : companyId = companyId ?? '',
+        identification = identification ?? '',
+        image = image ?? [''];
 
   TestimonialModel copyWith({
     String? identification,
     String? name,
     String? position,
     String? testimony,
+    String? companyId,
     List<String>? image,
   }) {
     return TestimonialModel(
@@ -27,6 +32,7 @@ class TestimonialModel {
         name: name ?? this.name,
         position: position ?? this.position,
         testimony: testimony ?? this.testimony,
+        companyId: companyId ?? this.companyId,
         image: image ?? this.image);
   }
 
@@ -37,6 +43,7 @@ class TestimonialModel {
     result.addAll({'name': name});
     result.addAll({'position': position});
     result.addAll({'testimony': testimony});
+    result.addAll({'companyId': companyId});
     result.addAll({'image': image});
 
     return result;
@@ -48,6 +55,7 @@ class TestimonialModel {
         name: map['name'] ?? '',
         position: map['position'] ?? '',
         testimony: map['testimony'] ?? '',
+        companyId: map['companyId'] ?? '',
         image: List<String>.from(map['image']));
   }
 
@@ -58,6 +66,12 @@ class TestimonialModel {
 
   @override
   String toString() {
-    return 'TestimonialModel(identification:$identification, name: $name, position: $position, testimony: $testimony, image: $image)';
+    return 'TestimonialModel(identification:$identification, name: $name, position: $position, testimony: $testimony, image: $image, companyId: $companyId)';
   }
 }
+
+// void main(List<String> args) {
+//   TestimonialModel x =
+//       TestimonialModel(name: 'birhan', position: 'ceo', testimony: 'testimony');
+//   print(x.toJson());
+// }

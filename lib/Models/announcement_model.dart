@@ -1,25 +1,27 @@
 import 'dart:convert';
 
 class AnnouncementModel {
-  final String identification;
+  String identification;
   final String content;
-  final String companyID;
+  String companyID;
   String title;
-  String author;
+  String postedBy;
   String publishDate;
   List<String> tags;
   List<String> images;
   AnnouncementModel({
-    required this.identification,
     required this.content,
-    required this.companyID,
+    identification,
+    companyID,
     title,
-    author,
+    postedBy,
     publishDate,
     tags,
     images,
-  })  : title = title ?? '',
-        author = author ?? '',
+  })  : identification = identification ?? '',
+        companyID = companyID ?? '',
+        title = title ?? '',
+        postedBy = postedBy ?? '',
         publishDate = publishDate ?? '',
         tags = tags ?? [''],
         images = images ?? [''];
@@ -29,7 +31,7 @@ class AnnouncementModel {
     String? content,
     String? companyID,
     String? title,
-    String? author,
+    String? postedBy,
     String? publishDate,
     List<String>? tags,
     List<String>? images,
@@ -39,7 +41,7 @@ class AnnouncementModel {
       content: content ?? this.content,
       companyID: companyID ?? this.companyID,
       title: title ?? this.title,
-      author: author ?? this.author,
+      postedBy: postedBy ?? this.postedBy,
       publishDate: publishDate ?? this.publishDate,
       tags: tags ?? this.tags,
       images: images ?? this.images,
@@ -53,7 +55,7 @@ class AnnouncementModel {
     result.addAll({'content': content});
     result.addAll({'companyID': companyID});
     result.addAll({'title': title});
-    result.addAll({'author': author});
+    result.addAll({'postedBy': postedBy});
     result.addAll({'publishDate': publishDate});
     result.addAll({'tags': tags});
     result.addAll({'images': images});
@@ -67,7 +69,7 @@ class AnnouncementModel {
       content: map['content'] ?? '',
       companyID: map['companyID'] ?? '',
       title: map['title'] ?? '',
-      author: map['author'] ?? '',
+      postedBy: map['postedBy'] ?? '',
       publishDate: map['publishDate'] ?? '',
       tags: List<String>.from(map['tags']),
       images: List<String>.from(map['images']),
@@ -81,6 +83,11 @@ class AnnouncementModel {
 
   @override
   String toString() {
-    return 'AnnouncementModel( identification: $identification ,content: $content, companyID: $companyID, title: $title, author: $author, publishDate: $publishDate, tags: $tags, images: $images)';
+    return 'AnnouncementModel( identification: $identification ,content: $content, companyID: $companyID, title: $title, postedBy: $postedBy, publishDate: $publishDate, tags: $tags, images: $images)';
   }
 }
+
+// void main(List<String> args) {
+//   AnnouncementModel x = AnnouncementModel(content: 'content');
+//   print(x.toMap());
+// }

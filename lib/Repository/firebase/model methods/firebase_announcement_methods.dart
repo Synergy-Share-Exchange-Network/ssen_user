@@ -1,3 +1,3 @@
-import 'package:ssen_user/Models/company_profile-model.dart';
+import 'package:ssen_user/Models/company_profile_model.dart';
 
 class FirebaseAnnouncementMethods {}
