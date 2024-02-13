@@ -72,7 +72,7 @@ class SecondaryProfileWidget extends StatelessWidget {
                       Row(
                         children: [
                           const Icon(
-                            Iconsax.personalcard4,
+                            Iconsax.dollar_circle,
                             color: Colors.blue,
                             size: 15,
                           ),

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ssen_user/intermediate.dart';
+import 'package:ssen_user/screens/FAQ.dart';
+import 'package:ssen_user/screens/announcment_detail.dart';
+import 'package:ssen_user/screens/assets.dart';
+import 'package:ssen_user/screens/history.dart';
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
+import 'package:ssen_user/widget/history_widget.dart';
+import 'package:ssen_user/widget/secondary_profile_widget.dart';
 
 void main() {
   runApp(MyApp(
@@ -37,7 +43,7 @@ class MyApp extends StatelessWidget {
       // home: const TermAndCondition(),
 
       // home: DesktopResponsive(),
-      home: Intermediate(),
+      // home: Intermediate(),
       // home: SearchScreen(),
 
       // home: PostShareSecondary(),
@@ -47,8 +53,13 @@ class MyApp extends StatelessWidget {
       // home: LoginScreen(),
 
       // home: HistoryWidget(),
+      // home: History(),
       // home: Subscribers(),
       // home: CompanyProfileWidget(),
+      // home: Assets(),
+      // home: AnnouncementDetail(),
+      // home: SecondaryProfileWidget(),
+      // home: Faq(),
 
       onGenerateRoute: appRouter.onGenerateRoute,
     );
