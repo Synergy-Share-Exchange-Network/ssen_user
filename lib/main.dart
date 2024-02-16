@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
       // home: Subscribers(),
       // home: CompanyProfileWidget(),
       // home: Assets(),
-      // home: AnnouncementDetail(),
+      home: AnnouncementDetail(),
       // home: SecondaryProfileWidget(),
       // home: Faq(),
 
