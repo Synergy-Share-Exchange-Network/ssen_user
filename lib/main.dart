@@ -3,9 +3,12 @@ import 'package:ssen_user/intermediate.dart';
 import 'package:ssen_user/screens/FAQ.dart';
 import 'package:ssen_user/screens/announcment_detail.dart';
 import 'package:ssen_user/screens/assets.dart';
+import 'package:ssen_user/screens/components/announcement.dart';
+import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/history.dart';
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
+import 'package:ssen_user/widget/faq_element_widget.dart';
 import 'package:ssen_user/widget/history_widget.dart';
 import 'package:ssen_user/widget/secondary_profile_widget.dart';
 
@@ -57,9 +60,10 @@ class MyApp extends StatelessWidget {
       // home: Subscribers(),
       // home: CompanyProfileWidget(),
       // home: Assets(),
-      home: AnnouncementDetail(),
+      // home: AnnouncementDetail(),
       // home: SecondaryProfileWidget(),
-      // home: Faq(),
+      home: Faq(),
+      // home: FaqElementWidget(),
 
       onGenerateRoute: appRouter.onGenerateRoute,
     );

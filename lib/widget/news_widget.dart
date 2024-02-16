@@ -15,11 +15,12 @@ class NewsWidget extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 175,
+      margin: EdgeInsets.all(8),
       child: Column(
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 135,
+            height: 150,
             child: Row(
               children: [
                 Expanded(
