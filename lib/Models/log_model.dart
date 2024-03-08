@@ -3,9 +3,8 @@ import 'dart:convert';
 class LogModel {
   final String identification;
   final String date;
-  final String identificationOfModifire;
-  final String roleOfModifire;
-  final String identificationOfModifiedUserID;
+  final String identificationOfModifierId;
+  final String identificationOfModified;
   final String roleOfModifiedUserID;
 
   String? reason;
@@ -13,9 +12,8 @@ class LogModel {
   LogModel({
     required this.identification,
     required this.date,
-    required this.identificationOfModifire,
-    required this.roleOfModifire,
-    required this.identificationOfModifiedUserID,
+    required this.identificationOfModifierId,
+    required this.identificationOfModified,
     required this.roleOfModifiedUserID,
     reason,
     whatChanged,
@@ -25,9 +23,8 @@ class LogModel {
   LogModel copyWith({
     String? identification,
     String? date,
-    String? identificationOfModifire,
-    String? roleOfModifire,
-    String? identificationOfModifiedUserID,
+    String? identificationOfModifierId,
+    String? identificationOfModified,
     String? roleOfModifiedUserID,
     String? reason,
     String? whatChanged,
@@ -35,11 +32,10 @@ class LogModel {
     return LogModel(
       identification: identification ?? this.identification,
       date: date ?? this.date,
-      identificationOfModifire:
-          identificationOfModifire ?? this.identificationOfModifire,
-      roleOfModifire: roleOfModifire ?? this.roleOfModifire,
-      identificationOfModifiedUserID:
-          identificationOfModifiedUserID ?? this.identificationOfModifiedUserID,
+      identificationOfModifierId:
+          identificationOfModifierId ?? this.identificationOfModifierId,
+      identificationOfModified:
+          identificationOfModified ?? this.identificationOfModified,
       roleOfModifiedUserID: roleOfModifiedUserID ?? this.roleOfModifiedUserID,
       reason: reason ?? this.reason,
       whatChanged: whatChanged ?? this.whatChanged,
@@ -51,10 +47,8 @@ class LogModel {
 
     result.addAll({'identification': identification});
     result.addAll({'date': date});
-    result.addAll({'identificationOfModifire': identificationOfModifire});
-    result.addAll({'roleOfModifire': roleOfModifire});
-    result.addAll(
-        {'identificationOfModifiedUserID': identificationOfModifiedUserID});
+    result.addAll({'identificationOfModifierId': identificationOfModifierId});
+    result.addAll({'identificationOfModified': identificationOfModified});
     result.addAll({'roleOfModifiedUserID': roleOfModifiedUserID});
     if (reason != null) {
       result.addAll({'reason': reason});
@@ -70,10 +64,8 @@ class LogModel {
     return LogModel(
       identification: map['identification'] ?? '',
       date: map['date'] ?? '',
-      identificationOfModifire: map['identificationOfModifire'] ?? '',
-      roleOfModifire: map['roleOfModifire'] ?? '',
-      identificationOfModifiedUserID:
-          map['identificationOfModifiedUserID'] ?? '',
+      identificationOfModifierId: map['identificationOfModifierId'] ?? '',
+      identificationOfModified: map['identificationOfModified'] ?? '',
       roleOfModifiedUserID: map['roleOfModifiedUserID'] ?? '',
       reason: map['reason'],
       whatChanged: map['whatChanged'],
@@ -87,7 +79,7 @@ class LogModel {
 
   @override
   String toString() {
-    return 'LogModel(identification: $identification, date: $date, identificationOfModifire: $identificationOfModifire, roleOfModifire: $roleOfModifire, identificationOfModifiedUserID: $identificationOfModifiedUserID, roleOfModifiedUserID: $roleOfModifiedUserID, reason: $reason, whatChanged: $whatChanged)';
+    return 'LogModel(identification: $identification, date: $date, identificationOfModifierId: $identificationOfModifierId, identificationOfModified: $identificationOfModified, roleOfModifiedUserID: $roleOfModifiedUserID, reason: $reason, whatChanged: $whatChanged)';
   }
 }
 
@@ -95,9 +87,8 @@ void main(List<String> args) {
   LogModel x = LogModel(
       identification: 'identification',
       date: 'date',
-      identificationOfModifire: 'identificationOfModifire',
-      roleOfModifire: 'roleOfModifire',
-      identificationOfModifiedUserID: 'identificationOfModifiedUserID',
+      identificationOfModifierId: 'identificationOfModifierId',
+      identificationOfModified: 'identificationOfModified',
       roleOfModifiedUserID: 'roleOfModifiedUserID');
 
   print(x.toJson());

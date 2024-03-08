@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:ssen_user/Screens/signup.dart';
 import 'package:ssen_user/intermediate.dart';
 import 'package:ssen_user/screens/FAQ.dart';
 import 'package:ssen_user/screens/announcment_detail.dart';
 import 'package:ssen_user/screens/assets.dart';
+import 'package:ssen_user/screens/company_profile_detail.dart';
 import 'package:ssen_user/screens/components/announcement.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/history.dart';
+import 'package:ssen_user/screens/login.dart';
+import 'package:ssen_user/screens/payment_preview.dart';
+import 'package:ssen_user/screens/post_share_secondary.dart';
+import 'package:ssen_user/screens/share_detail.dart';
 import 'package:ssen_user/services/app_routes.dart';
 import 'package:ssen_user/services/theme/app_theme.dart';
+import 'package:ssen_user/widget/company_profile_widget.dart';
 import 'package:ssen_user/widget/faq_element_widget.dart';
 import 'package:ssen_user/widget/history_widget.dart';
 import 'package:ssen_user/widget/secondary_profile_widget.dart';
@@ -41,7 +48,7 @@ class MyApp extends StatelessWidget {
       // home: SignUp(),
 
       // home: HomePage(),
-      // home: Companyprofile(),
+      // home: PostShareSecondary(),
       // home: Purchase(),
       // home: const TermAndCondition(),
 
@@ -62,8 +69,10 @@ class MyApp extends StatelessWidget {
       // home: Assets(),
       // home: AnnouncementDetail(),
       // home: SecondaryProfileWidget(),
-      home: Faq(),
+      // home: Faq(),
       // home: FaqElementWidget(),
+      home: ShareDetail(),
+      // home: Payment_preview(),
 
       onGenerateRoute: appRouter.onGenerateRoute,
     );

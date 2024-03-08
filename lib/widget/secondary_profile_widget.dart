@@ -19,12 +19,6 @@ class SecondaryProfileWidget extends StatelessWidget {
         height: 110,
         width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.all(5),
-        // decoration: BoxDecoration(
-        //   borderRadius: BorderRadius.circular(14),
-        //   border: Border.all(
-        //       width: 1,
-        //       color: Colors.grey), // Adjust border properties as needed
-        // ),
         child: Row(
           children: [
             const SizedBox(

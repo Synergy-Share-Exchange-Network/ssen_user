@@ -5,7 +5,10 @@ class ProductModel {
   String companyId;
   String title;
   String description;
-  String role;
+  bool role;
+  bool isDelete;
+  bool isHide;
+  String date;
   List<String> image;
   ProductModel({
     identification,
@@ -13,12 +16,18 @@ class ProductModel {
     title,
     description,
     role,
+    isDelete,
+    isHide,
+    date,
     image,
   })  : identification = identification ?? '',
         companyId = companyId ?? '',
         title = title ?? '',
         description = description ?? '',
-        role = role ?? '',
+        role = role ?? false,
+        isDelete = isDelete ?? false,
+        isHide = isHide ?? false,
+        date = date ?? '',
         image = image ?? [''];
 
   ProductModel copyWith({
@@ -27,6 +36,9 @@ class ProductModel {
     String? title,
     String? description,
     String? role,
+    bool? isDelete,
+    bool? isHide,
+    String? date,
     List<String>? image,
   }) {
     return ProductModel(
@@ -35,6 +47,9 @@ class ProductModel {
       title: title ?? this.title,
       description: description ?? this.description,
       role: role ?? this.role,
+      isDelete: isDelete ?? this.isDelete,
+      isHide: isHide ?? this.isHide,
+      date: date ?? this.date,
       image: image ?? this.image,
     );
   }
@@ -47,6 +62,9 @@ class ProductModel {
     result.addAll({'title': title});
     result.addAll({'description': description});
     result.addAll({'role': role});
+    result.addAll({'isDelete': isDelete});
+    result.addAll({'isHide': isHide});
+    result.addAll({'date': date});
     result.addAll({'image': image});
 
     return result;
@@ -59,6 +77,9 @@ class ProductModel {
       title: map['title'] ?? '',
       description: map['description'] ?? '',
       role: map['role'] ?? '',
+      isDelete: map['isDelete'] ?? false,
+      isHide: map['isHide'] ?? false,
+      date: map['date'] ?? '',
       image: List<String>.from(map['image']),
     );
   }
@@ -70,6 +91,6 @@ class ProductModel {
 
   @override
   String toString() {
-    return 'ProductModel(identification: $identification, companyId: $companyId, title: $title, description: $description, role: $role, image: $image)';
+    return 'ProductModel(identification: $identification, companyId: $companyId, title: $title, description: $description, role: $role, isDelete: $isDelete, isHide: $isHide, date: $date, image: $image,)';
   }
 }

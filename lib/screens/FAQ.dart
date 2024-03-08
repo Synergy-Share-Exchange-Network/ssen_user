@@ -58,13 +58,14 @@ class Faq extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    FaqElementWidget(
+                    const FaqElementWidget(
                         questions:
                             "what are the main functions of stock market?"),
                     FaqElementWidget(
                         questions: "How does the stock market work?"),
-                    FaqElementWidget(
+                    const FaqElementWidget(
                         questions: "What factors can affect stock prices?"),
                     FaqElementWidget(
                         questions:
