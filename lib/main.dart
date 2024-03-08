@@ -71,8 +71,8 @@ class MyApp extends StatelessWidget {
       // home: SecondaryProfileWidget(),
       // home: Faq(),
       // home: FaqElementWidget(),
-      home: ShareDetail(),
-      // home: Payment_preview(),
+      // home: ShareDetail(),
+      home: Payment_preview(),
 
       onGenerateRoute: appRouter.onGenerateRoute,
     );
