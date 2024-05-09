@@ -5,7 +5,6 @@ import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/constants/image_Strings.dart';
 import 'package:ssen_user/utils/helper_function.dart';
 import 'package:ssen_user/widget/company_profile_widget.dart';
-import 'package:ssen_user/widget/secondary_profile_widget.dart';
 import 'package:ssen_user/widget/subscription_widget.dart';
 
 class SearchScreen extends StatefulWidget {

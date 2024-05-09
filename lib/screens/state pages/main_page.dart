@@ -1,4 +1,3 @@
-
 // import 'package:flutter/material.dart';
 
 // import 'package:ssen_user/Screens/components/home.dart';
@@ -7,7 +6,6 @@
 // import 'package:ssen_user/screens/components/subscribers.dart';
 // import 'package:ssen_user/utils/constants/colors.dart';
 // import 'package:ssen_user/utils/helper_function.dart';
-
 
 // class MainPage extends StatefulWidget {
 //   const MainPage({super.key});
@@ -88,8 +86,11 @@ import 'package:flutter/material.dart';
 import 'package:ssen_user/screens/components/announcement.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
+import 'package:ssen_user/screens/profile.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/helper_function.dart';
+
+import '../components/analysis.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -105,9 +106,11 @@ class _MainPageState extends State<MainPage> {
   final screens = [
     Home(),
     Subscribers(),
-    Center(child: Text("3")),
+
+    Anlaytics(),
     Announcment(),
-    Center(child: Text("5")),
+    // Center(child: Text("5")),
+    UserProfile()
   ];
 
   @override
@@ -155,4 +158,3 @@ class _MainPageState extends State<MainPage> {
             ]));
   }
 }
-

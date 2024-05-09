@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ssen_user/Screens/edit_profile.dart';
+import 'package:ssen_user/screens/assets.dart';
+import 'package:ssen_user/screens/history.dart';
+import 'package:ssen_user/screens/setting.dart';
 import 'package:ssen_user/services/theme/text_theme.dart';
+import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/constants/size.dart';
 import 'package:ssen_user/utils/constants/text_string.dart';
@@ -14,117 +18,140 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.arrow_back_ios_sharp),
-        ),
-        title: Text(
-          SText.profile,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-        centerTitle: true,
-      ),
+      appBar: (MediaQuery.of(context).size.width < phoneSize)
+          ? AppBar(
+              leading: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.arrow_back_ios_sharp),
+              ),
+              title: Text(
+                SText.profile,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              centerTitle: true,
+            )
+          : AppBar(),
       body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(SSizes.defaultSpace),
-          child: Column(
-            children: [
-              Stack(children: [
-                SizedBox(
-                  width: 120,
-                  height: 120,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    child: const Image(
-                        image: AssetImage('asset/demo_image/demo1.JPG')),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    height: 35,
-                    width: 35,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: SColors.primaryColor),
-                    child: Icon(
-                      Icons.edit,
-                      color: Colors.black,
-                      size: 20,
+        child: Center(
+          child: Container(
+            width: 600,
+            padding: const EdgeInsets.all(SSizes.defaultSpace),
+            child: Column(
+              children: [
+                Stack(children: [
+                  SizedBox(
+                    width: 120,
+                    height: 120,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: const Image(
+                          image: AssetImage('asset/logo_image/goat.JPG')),
                     ),
                   ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      height: 35,
+                      width: 35,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: SColors.primaryColor),
+                      child: const Icon(
+                        Icons.edit,
+                        color: Colors.black,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                ]),
+                const SizedBox(
+                  height: 10,
                 ),
-              ]),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                '${SText.firstName}: Dawit Nigus ',
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-              Text(
-                '${SText.shares} :1000',
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                  width: 200,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const EditProfile()));
-                      },
-                      child: const Text('Edit profile'))),
-              const SizedBox(
-                height: 30,
-              ),
-              ProfileMenuWidget(
-                  endicon: true,
-                  icon: Iconsax.eye,
-                  onpress: () {},
-                  textcolor: Colors.blue,
-                  title: 'Preview'),
-              const SizedBox(
-                height: SSizes.spaceBtwItems,
-              ),
-              ProfileMenuWidget(
-                  endicon: true,
-                  icon: Iconsax.people,
-                  onpress: () {},
-                  textcolor: Colors.blue,
-                  title: 'Posts'),
-              const SizedBox(
-                height: SSizes.spaceBtwItems,
-              ),
-              ProfileMenuWidget(
-                  endicon: true,
-                  icon: Iconsax.data,
-                  onpress: () {},
-                  textcolor: Colors.blue,
-                  title: 'Hisory'),
-              const SizedBox(
-                height: SSizes.spaceBtwItems,
-              ),
-              ProfileMenuWidget(
-                  endicon: true,
-                  icon: Iconsax.setting,
-                  onpress: () {},
-                  textcolor: Colors.blue,
-                  title: 'Setting'),
-              const SizedBox(
-                height: SSizes.spaceBtwItems,
-              ),
-              ProfileMenuWidget(
-                  endicon: false,
-                  icon: Iconsax.logout,
-                  onpress: () {},
-                  textcolor: Colors.red,
-                  title: 'Sign Out')
-            ],
+                Text(
+                  '${SText.firstName}: Dawit Nigus ',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                Text(
+                  '${SText.shares} :1000',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                    width: 200,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const EditProfile()));
+                        },
+                        child: const Text('Edit profile'))),
+                const SizedBox(
+                  height: 30,
+                ),
+                ProfileMenuWidget(
+                    endicon: true,
+                    icon: Iconsax.eye,
+                    onpress: () {},
+                    textcolor: Colors.blue,
+                    title: 'Preview'),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems,
+                ),
+                ProfileMenuWidget(
+                    endicon: true,
+                    icon: Iconsax.people,
+                    onpress: () {},
+                    textcolor: Colors.blue,
+                    title: 'Posts'),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems,
+                ),
+                ProfileMenuWidget(
+                    endicon: true,
+                    icon: Iconsax.data,
+                    onpress: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) => History())));
+                    },
+                    textcolor: Colors.blue,
+                    title: 'Hisory'),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems,
+                ),
+                ProfileMenuWidget(
+                    endicon: true,
+                    icon: Iconsax.setting,
+                    onpress: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) => Assets())));
+                    },
+                    textcolor: Colors.blue,
+                    title: 'Assets'),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems,
+                ),
+                ProfileMenuWidget(
+                    endicon: true,
+                    icon: Iconsax.setting,
+                    onpress: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) => Setting())));
+                    },
+                    textcolor: Colors.blue,
+                    title: 'Setting'),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems,
+                ),
+                ProfileMenuWidget(
+                    endicon: false,
+                    icon: Iconsax.logout,
+                    onpress: () {},
+                    textcolor: Colors.red,
+                    title: 'Sign Out')
+              ],
+            ),
           ),
         ),
       ),

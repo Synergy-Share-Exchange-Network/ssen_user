@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ssen_user/Models/key_figure_model.dart';
 import 'package:ssen_user/services/theme/text_theme.dart';
 import 'package:ssen_user/utils/constants/image_Strings.dart';
 

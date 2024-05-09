@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ssen_user/screens/FAQ.dart';
+import 'package:ssen_user/screens/about.dart';
+import 'package:ssen_user/screens/components/donation.dart';
+import 'package:ssen_user/screens/components/public.dart';
+import 'package:ssen_user/screens/components/secondary.dart';
+import 'package:ssen_user/screens/setting.dart';
+import 'package:ssen_user/screens/terms%20and%20condition.dart';
 import 'package:ssen_user/services/theme/text_theme.dart';
 import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
@@ -89,18 +96,12 @@ class _HomeState extends State<Home> {
                 ),
                 // elevation: 1,
               ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              ShareWidget(),
-              ShareWidget(),
-              ShareWidget(),
-              ShareWidget(),
-              ShareWidget(),
-              ShareWidget(),
-            ],
-          ),
-        ),
+        body: (const TabBarView(children: [
+          Public(),
+          Public(),
+          Donation(),
+          Secondary(),
+        ])),
       ),
     );
   }

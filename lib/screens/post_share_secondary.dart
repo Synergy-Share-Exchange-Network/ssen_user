@@ -14,94 +14,150 @@ class PostShareSecondary extends StatelessWidget {
       appBar: AppBar(
         title: Text('Post Share'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(SSizes.defaultSpace),
-        child: Column(children: [
-          Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    const FormElement(
-                      title: "No of Share",
-                      important: true,
-                    ),
-                    const SizedBox(
-                      height: SSizes.spaceBtwItems / 2,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.activity),
-                          labelText: SText.noOfShare),
-                    ),
-                  ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
+          child: Column(children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                      const FormElement(
+                        title: "No of Share",
+                        important: true,
+                      ),
+                      const SizedBox(
+                        height: SSizes.spaceBtwItems / 2,
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                            prefixIcon: Icon(Iconsax.activity),
+                            labelText: SText.noOfShare),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(
-                width: SSizes.spaceBtwItems,
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    const FormElement(
-                      title: "Per Share Price",
-                      important: true,
-                    ),
-                    const SizedBox(
-                      height: SSizes.spaceBtwItems / 2,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.money_recive),
-                          labelText: SText.perSharePrice),
-                    ),
-                  ],
+                const SizedBox(
+                  width: SSizes.spaceBtwItems,
                 ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: SSizes.spaceBtwInputField,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const FormElement(
-                title: "Contact",
-              ),
-              const SizedBox(
-                height: SSizes.spaceBtwItems / 2,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                    prefixIcon: Icon(Iconsax.call),
-                    labelText: SText.phoneNumber),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: SSizes.spaceBtwInputField,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const FormElement(
-                title: "Company Name",
-              ),
-              const SizedBox(
-                height: SSizes.spaceBtwItems / 2,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                    prefixIcon: Icon(Iconsax.home_trend_up),
-                    labelText: SText.companyName),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: SSizes.spaceBtwInputField,
-          )
-        ]),
+                Expanded(
+                  child: Column(
+                    children: [
+                      const FormElement(
+                        title: "Per Share Price",
+                        important: true,
+                      ),
+                      const SizedBox(
+                        height: SSizes.spaceBtwItems / 2,
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                            prefixIcon: Icon(Iconsax.money_recive),
+                            labelText: SText.perSharePrice),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: SSizes.spaceBtwInputField,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const FormElement(
+                  title: "Contact",
+                ),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems / 2,
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.call),
+                      labelText: SText.phoneNumber),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: SSizes.spaceBtwInputField,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const FormElement(
+                  title: "Company Name",
+                ),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems / 2,
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.home_trend_up),
+                      labelText: SText.companyName),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: SSizes.spaceBtwInputField,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const FormElement(
+                  title: "Company Name",
+                ),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems / 2,
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.home_trend_up),
+                      labelText: SText.companyName),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: SSizes.spaceBtwInputField,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const FormElement(
+                  title: "Company Name",
+                ),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems / 2,
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.home_trend_up),
+                      labelText: SText.companyName),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: SSizes.spaceBtwInputField,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const FormElement(
+                  title: "Company Name",
+                ),
+                const SizedBox(
+                  height: SSizes.spaceBtwItems / 2,
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.home_trend_up),
+                      labelText: SText.companyName),
+                ),
+              ],
+            ),
+          ]),
+        ),
       ),
     );
   }

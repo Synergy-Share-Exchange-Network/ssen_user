@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -7,11 +5,8 @@ import 'package:iconsax/iconsax.dart';
 import 'package:ssen_user/services/theme/text_theme.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 
-import '../screens/share_detail.dart';
-import '../screens/state pages/company_profile.dart';
-
-class ShareWidget extends StatelessWidget {
-  const ShareWidget({Key? key}) : super(key: key);
+class DonationWidget extends StatelessWidget {
+  const DonationWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,34 +29,27 @@ class ShareWidget extends StatelessWidget {
               width: 10,
             ),
             Container(
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: ((context) => Companyprofile())));
-                },
-                child: CircleAvatar(
-                  radius: 40,
-                  backgroundImage: AssetImage('asset/logo_image/goat.jpg'),
-                ),
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('asset/logo_image/goat.jpg'),
               ),
             ),
             SizedBox(
               width: 15,
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => ShareDetail())));
-              },
+              onTap: () {},
               child: Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Habesha Breweries ",
-                        style: STextTheme.lightTextTheme.headlineSmall),
+                    Text(
+                      "mekedoniya humanitarian A. ",
+                      style: STextTheme.lightTextTheme.headlineSmall,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 5,
+                    ),
                     Row(
                       children: [
                         const Icon(
@@ -121,16 +109,6 @@ class ShareWidget extends StatelessWidget {
                         // const SizedBox(
                         //   width: 3,
                         // ),
-                        Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 151, 213, 242),
-                              borderRadius: BorderRadius.circular(3)),
-                          child: Text("latest price: Br 500",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 12)),
-                        ),
                       ],
                     ),
                   ],

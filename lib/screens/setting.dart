@@ -1,14 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:ssen_user/screens/FAQ.dart';
+import 'package:ssen_user/screens/about.dart';
+import 'package:ssen_user/screens/terms%20and%20condition.dart';
 import 'package:ssen_user/widget/setting_elements_widget.dart';
 
 class Setting extends StatelessWidget {
   const Setting({Key? key}) : super(key: key);
+  static const route = "Setting";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(Icons.arrow_back_ios_new_outlined,
+                size: 20, color: Colors.blue)),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text(
+          'Settings',
+          style: TextStyle(
+            decoration: TextDecoration.none,
+            color: Colors.blue,
+            // fontSize: 27,
+            // fontWeight: FontWeight.bold
+          ),
+        ),
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         child: Column(
@@ -19,6 +40,10 @@ class Setting extends StatelessWidget {
               description: 'Frequently Asked Questions',
               icon: Icons.question_mark_outlined,
               name: 'FAQs',
+              onpress: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: ((context) => Faq())));
+              },
               // function: () {
               //   print("go to faq");
               // },
@@ -27,6 +52,12 @@ class Setting extends StatelessWidget {
               description: 'terms of use, terms of service, or user agreements',
               icon: Icons.format_align_justify,
               name: 'Term And Condition',
+              onpress: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => TermAndCondition())));
+              },
               // function: () {
               //   print("go to term and condition");
               // },
@@ -35,6 +66,10 @@ class Setting extends StatelessWidget {
               description: 'description about the system',
               icon: Icons.info,
               name: 'About',
+              onpress: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => About())));
+              },
               // function: () {
               //   print("go to faq");
               // },
@@ -43,6 +78,7 @@ class Setting extends StatelessWidget {
               description: 'a set of predefined styles ',
               icon: Icons.palette,
               name: 'Themes',
+              onpress: () {},
               // function: () {
               //   print("go to faq");
               // },
@@ -52,6 +88,7 @@ class Setting extends StatelessWidget {
                   'retrieving the latest versions of software updates ',
               icon: Icons.update,
               name: 'Check for update',
+              onpress: () {},
               // function: () {
               //   print("go to faq");
               // },
@@ -60,6 +97,7 @@ class Setting extends StatelessWidget {
               description: 'terminating the users current session ',
               icon: Icons.logout,
               name: 'Log out',
+              onpress: () {},
               // function: () {
               //   print("go to faq");
               // },

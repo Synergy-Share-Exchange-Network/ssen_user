@@ -3,7 +3,7 @@ import 'package:ssen_user/utils/constants/text_string.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
-  static const route = "about";
+  static const route = "AboutUs";
 
   @override
   Widget build(BuildContext context) {

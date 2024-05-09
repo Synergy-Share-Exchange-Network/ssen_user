@@ -6,20 +6,20 @@ class SettingElementsWidget extends StatelessWidget {
     required this.name,
     required this.description,
     required this.icon,
+    required this.onpress,
+
     // required this.function,
   }) : super(key: key);
   final String name;
   final String description;
   final IconData icon;
+  final VoidCallback onpress;
   // final Function function;
   // final VoidCallback function2;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        // print("fdlvm,;f");
-        // function;
-      },
+      onTap: onpress,
       child: Container(
         padding: EdgeInsets.all(12),
         margin: EdgeInsets.symmetric(vertical: 3, horizontal: 20),

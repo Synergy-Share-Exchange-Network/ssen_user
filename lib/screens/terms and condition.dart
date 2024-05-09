@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ssen_user/Models/term_condition.dart';
 import 'package:ssen_user/utils/constants/text_string.dart';
 
 class TermAndCondition extends StatelessWidget {
@@ -7,6 +8,111 @@ class TermAndCondition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TermConditionModel termandcondition = TermConditionModel(
+      identification: "88",
+      title: "introduction",
+      description:
+          "Lorem  ythf ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar. ",
+      companyId: "",
+    );
+    TermConditionModel termandcondition2 = TermConditionModel(
+      identification: "",
+      title: "acceptance",
+      description:
+          "By using this app or website, you agree to abide by the following Terms and Conditions.",
+      companyId: "",
+    );
+    TermConditionModel termandcondition3 = TermConditionModel(
+      identification: "",
+      title: "age restriction",
+      description:
+          'You must be at least 18 years old to use this app or website.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition4 = TermConditionModel(
+      identification: "",
+      title: "account creation",
+      description:
+          'You are responsible for maintaining the confidentiality of your account credentials.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition5 = TermConditionModel(
+      identification: "",
+      title: "prohibited activities",
+      description:
+          'You are not allowed to engage in any form of harassment, spamming, or illegal content sharing.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition6 = TermConditionModel(
+      identification: "",
+      title: "content ownership",
+      description:
+          'You retain ownership of the content you post, but grant the app or website necessary licenses to display or use that content.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition7 = TermConditionModel(
+      identification: "",
+      title: "copyright ownership",
+      description:
+          'All content provided by this app or website is protected by copyright laws.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition8 = TermConditionModel(
+      identification: "",
+      title: "trademarks",
+      description:
+          'The app or website trademarks are the property of their respective owners. Unauthorized use is prohibited.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition9 = TermConditionModel(
+      identification: "",
+      title: "limitation of liability",
+      description:
+          'We are not responsible for any damages or losses incurred by users while using this app or website.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition10 = TermConditionModel(
+      identification: "",
+      title: "privacy policy",
+      description:
+          'This app or website has a separate Privacy Policy that you should review for details on data collection, usage, and protection.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition11 = TermConditionModel(
+      identification: "",
+      title: "modifications to terms and conditions",
+      description:
+          'We reserve the right to modify or update the terms and conditions.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition12 = TermConditionModel(
+      identification: "",
+      title: "termination",
+      description:
+          'we can terminate your accesss to this app or website if you violate the terms and conditions.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition13 = TermConditionModel(
+      identification: "",
+      title: "governing law",
+      description:
+          'the term and conditions shall be governed by and constructed.',
+      companyId: "",
+    );
+    TermConditionModel termandcondition14 = TermConditionModel(
+      identification: "",
+      title: "contact information",
+      description:
+          'for any inquiries or concerns please contact as at example@gmail.com ',
+      companyId: "",
+    );
+    TermConditionModel termandcondition15 = TermConditionModel(
+      identification: "",
+      title: "effective  date",
+      description:
+          'these term and conditions are effective as of september1,2023',
+      companyId: "",
+    );
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -35,21 +141,21 @@ class TermAndCondition extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  SText.introdunction,
+                  termandcondition.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam lobortis purus non pulvinar.',
+                  termandcondition.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.acceptance,
+                  termandcondition2.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'By using this app or website, you agree to abide by the following Terms and Conditions.',
+                  termandcondition2.description,
                 ),
                 SizedBox(height: 24),
                 Text(
@@ -57,32 +163,28 @@ class TermAndCondition extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
+                Text(termandcondition3.title),
                 Text(
-                  SText.ageRestrictions,
+                  termandcondition3.description,
                 ),
+                SizedBox(height: 8),
+                Text(termandcondition4.title),
                 Text(
-                  'You must be at least 18 years old to use this app or website.',
+                  termandcondition4.description,
                 ),
                 SizedBox(height: 8),
                 Text(
-                  SText.accountCreation,
+                  termandcondition5.title,
                 ),
                 Text(
-                  'You are responsible for maintaining the confidentiality of your account credentials.',
-                ),
-                SizedBox(height: 8),
-                Text(
-                  SText.prohibitedActivities,
-                ),
-                Text(
-                  'You are not allowed to engage in any form of harassment, spamming, or illegal content sharing.',
+                  termandcondition5.description,
                 ),
                 SizedBox(height: 8),
                 Text(
-                  SText.contentOwnership,
+                  termandcondition6.title,
                 ),
                 Text(
-                  'You retain ownership of the content you post, but grant the app or website necessary licenses to display or use that content.',
+                  termandcondition6.description,
                 ),
                 SizedBox(height: 24),
                 Text(
@@ -91,80 +193,80 @@ class TermAndCondition extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Text(
-                  SText.copyrightNotice,
+                  termandcondition7.title,
                 ),
                 Text(
-                  'All content provided by this app or website is protected by copyright laws.',
+                  termandcondition7.description,
                 ),
                 SizedBox(height: 8),
                 Text(
-                  SText.trademarks,
+                  termandcondition8.title,
                 ),
                 Text(
-                  'The app or website trademarks are the property of their respective owners. Unauthorized use is prohibited.',
+                  termandcondition8.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.limitationsOfLiability,
+                  termandcondition9.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'We are not responsible for any damages or losses incurred by users while using this app or website.',
+                  termandcondition9.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.privacyPolicy,
+                  termandcondition10.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'This app or website has a separate Privacy Policy that you should review for details on data collection, usage, and protection.',
+                  termandcondition10.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.modificationsToTermsandConditions,
+                  termandcondition11.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'We reserve the right to modify or update the Terms and Conditions at any time. You will be notified of any changes.',
+                  termandcondition11.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.termination,
+                  termandcondition12.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'We can terminate your access to this app or website if you violate the Terms and Conditions or engage in illegal activities.',
+                  termandcondition12.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.governingLaw,
+                  termandcondition13.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'The Terms and Conditions shall be governed by and construed in accordance with the laws of your jurisdiction.',
+                  termandcondition13.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.contactInformation,
+                  termandcondition14.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'For any inquiries or concerns, please contact us at example@example.com.',
+                  termandcondition14.description,
                 ),
                 SizedBox(height: 24),
                 Text(
-                  SText.effectiveDate,
+                  termandcondition15.title,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'These Terms and Conditions are effective as of September 1, 2023.',
+                  termandcondition15.description,
                 ),
               ],
             ),
