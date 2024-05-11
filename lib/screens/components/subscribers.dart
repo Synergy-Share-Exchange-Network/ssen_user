@@ -14,9 +14,13 @@ class Subscribers extends StatefulWidget {
 }
 
 class _SubscribersState extends State<Subscribers> {
+  bool isAllSelected = true;
+  bool isPublicSelected = false;
+  bool isDonationSelected = false;
   @override
   Widget build(BuildContext context) {
     bool isDark = SHelperFunction.isDarkMode(context);
+    setState(() {});
 
     return Scaffold(
       appBar: (MediaQuery.of(context).size.width > phoneSize)
@@ -60,34 +64,6 @@ class _SubscribersState extends State<Subscribers> {
                   MiniCompanySub(),
                   MiniCompanySub(),
                   MiniCompanySub(),
-                  // InkWell(
-                  //     onTap: () =>
-                  //         Navigator.pushNamed(context, ChannelShop.route),
-                  //     child: const ShopChannel()),
-                  // InkWell(
-                  //     onTap: () =>
-                  //         Navigator.pushNamed(context, ChannelShop.route),
-                  //     child: const ShopChannel()),
-                  // InkWell(
-                  //     onTap: () =>
-                  //         Navigator.pushNamed(context, ChannelShop.route),
-                  //     child: const ShopChannel()),
-                  // InkWell(
-                  //     onTap: () =>
-                  //         Navigator.pushNamed(context, ChannelShop.route),
-                  //     child: const ShopChannel()),
-                  // InkWell(
-                  //     onTap: () =>
-                  //         Navigator.pushNamed(context, ChannelShop.route),
-                  //     child: const ShopChannel()),
-                  // InkWell(
-                  //     onTap: () =>
-                  //         Navigator.pushNamed(context, ChannelShop.route),
-                  //     child: const ShopChannel()),
-                  // InkWell(
-                  //     onTap: () =>
-                  //         Navigator.pushNamed(context, ChannelShop.route),
-                  //     child: const ShopChannel()),
                   TextButton(onPressed: () {}, child: const Text("View all"))
                 ],
               ),
@@ -102,26 +78,53 @@ class _SubscribersState extends State<Subscribers> {
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    CustomChip(
-                      icon: Iconsax.align_horizontally,
-                      text: 'All',
-                      isSelected: true,
+                    InkWell(
+                      child: CustomChip(
+                        icon: Iconsax.align_horizontally,
+                        text: 'All',
+                        isSelected: isAllSelected,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          isAllSelected = true;
+                          isPublicSelected = false;
+                          isDonationSelected = false;
+                        });
+                      },
                     ),
                     SizedBox(
                       width: 20,
                     ),
-                    CustomChip(
-                      icon: Iconsax.people,
-                      text: 'Public',
-                      isSelected: false,
+                    InkWell(
+                      child: CustomChip(
+                        icon: Iconsax.people,
+                        text: 'Public',
+                        isSelected: isPublicSelected,
+                      ),
+                      onTap: () {
+                        print("hello");
+                        isAllSelected = false;
+                        isPublicSelected = true;
+                        isDonationSelected = false;
+                        setState(() {});
+                      },
                     ),
                     SizedBox(
                       width: 20,
                     ),
-                    CustomChip(
-                      icon: Iconsax.document1,
-                      text: 'Dontaion',
-                      isSelected: false,
+                    InkWell(
+                      child: CustomChip(
+                        icon: Iconsax.document1,
+                        text: 'Dontaion',
+                        isSelected: isDonationSelected,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          isAllSelected = false;
+                          isPublicSelected = false;
+                          isDonationSelected = true;
+                        });
+                      },
                     ),
 
                     // CustomChip(title: "All"),
@@ -138,8 +141,24 @@ class _SubscribersState extends State<Subscribers> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  SubscriptionWidget(),
-                  SubscriptionWidget(),
+                  InkWell(
+                      onTap: () {
+                        print("hello");
+                        print(isDonationSelected);
+                        isAllSelected = false;
+                        isPublicSelected = false;
+                        isDonationSelected = true;
+                        print(isDonationSelected);
+
+                        setState(() {});
+                        print(isDonationSelected);
+                      },
+                      child: SubscriptionWidget()),
+                  InkWell(
+                      onTap: () {
+                        print(isDonationSelected);
+                      },
+                      child: SubscriptionWidget()),
                   SubscriptionWidget(),
                   SubscriptionWidget(),
                   SubscriptionWidget(),
@@ -181,7 +200,7 @@ class _SubscribersState extends State<Subscribers> {
   }
 }
 
-class CustomChip extends StatelessWidget {
+class CustomChip extends StatefulWidget {
   const CustomChip({
     Key? key,
     required this.text,
@@ -193,41 +212,64 @@ class CustomChip extends StatelessWidget {
   final bool isSelected;
 
   @override
+  State<CustomChip> createState() => _CustomChipState();
+}
+
+class _CustomChipState extends State<CustomChip> {
+  late bool _isSelect;
+  void initState() {
+    super.initState();
+    _isSelect = widget.isSelected;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 110,
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          primary: (isSelected) ? SColors.primary : Colors.white,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-              side: BorderSide(
-                  color: SColors.primaryColor) // Adjust the value as needed
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _isSelect = true; // Change color to blue
+          // Navigate to another page
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => SecondPage()), // Replace SecondPage with your desired page
+          // );
+        });
+      },
+      child: Container(
+        width: 110,
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            primary: (_isSelect) ? SColors.primary : Colors.white,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                side: BorderSide(
+                    color: SColors.primaryColor) // Adjust the value as needed
+                ),
+            padding: EdgeInsets.all(
+                16.0), // Adjust the padding to increase the height and width
+          ),
+          child: Row(
+            children: [
+              Icon(
+                widget.icon,
+                color: (_isSelect) ? Colors.white : SColors.primary,
               ),
-          padding: EdgeInsets.all(
-              16.0), // Adjust the padding to increase the height and width
-        ),
-        child: Row(
-          children: [
-            Icon(
-              icon,
-              color: (isSelected) ? Colors.white : SColors.primary,
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Container(
-              width: 48,
-              child: Text(
-                text,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    color: (isSelected) ? Colors.white : SColors.primary,
-                    fontWeight: FontWeight.bold),
+              SizedBox(
+                width: 5,
               ),
-            ),
-          ],
+              Container(
+                width: 48,
+                child: Text(
+                  widget.text,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      color: (_isSelect) ? Colors.white : SColors.primary,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -13,6 +13,8 @@ import 'package:ssen_user/utils/constants/colors.dart';
 import 'package:ssen_user/utils/helper_function.dart';
 import 'package:ssen_user/widget/share_widget.dart';
 
+import '../search/my_search_delegate.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -61,7 +63,7 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     width: 10,
                   ),
-                  Icon(Iconsax.search_normal),
+                  SearchItem(),
                   SizedBox(
                     width: 20,
                   )

@@ -8,21 +8,26 @@ class Public extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScrollController publicScrollController = ScrollController();
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-            ShareWidget(),
-          ],
+        controller: publicScrollController,
+        child: Padding(
+          padding: EdgeInsets.only(right: 10),
+          child: Column(
+            children: [
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+              ShareWidget(),
+            ],
+          ),
         ),
       ),
     );
