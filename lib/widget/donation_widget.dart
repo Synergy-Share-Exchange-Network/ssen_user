@@ -3,7 +3,10 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ssen_user/services/theme/text_theme.dart';
+import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
+
+import 'analytics/graph_share_widget.dart';
 
 class DonationWidget extends StatelessWidget {
   const DonationWidget({Key? key}) : super(key: key);
@@ -44,18 +47,46 @@ class DonationWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "mekedoniya humanitarian A. ",
-                      style: STextTheme.lightTextTheme.headlineSmall,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 5,
+                    Row(
+                      children: [
+                        Text(
+                          "Mekedoniya  A. ",
+                          style: STextTheme.lightTextTheme.headlineSmall,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 5,
+                        ),
+                        SizedBox(
+                          width: (MediaQuery.of(context).size.width > phoneSize)
+                              ? 300
+                              : 80,
+                        ),
+                        Container(
+                            height:
+                                (MediaQuery.of(context).size.width > phoneSize)
+                                    ? 30
+                                    : 30,
+                            width:
+                                (MediaQuery.of(context).size.width > phoneSize)
+                                    ? 100
+                                    : 43,
+                            child: LineChartgraphShare())
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("home for the elderly and mentally disabeld",
+                            style: TextStyle(color: Colors.grey, fontSize: 12)),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
                     ),
                     Row(
                       children: [
                         const Icon(
                           Iconsax.location,
                           // color: Colors.black,
-                          size: 12,
+                          size: 11,
                         ),
                         const SizedBox(
                           width: 3,
@@ -64,52 +95,31 @@ class DonationWidget extends StatelessWidget {
                           "Addis Ababa, Ethiopia",
                           // style: STextTheme.lightTextTheme.bodySmall
                           //     ?.copyWith(color: Colors.blue),
-                          style: TextStyle(fontSize: 13),
+                          style: TextStyle(fontSize: 11),
                         ),
                       ],
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
-                    Row(
-                      children: [
-                        // Container(
-                        //   padding:
-                        //       EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                        //   decoration: BoxDecoration(
-                        //       color: Colors.lightBlue,
-                        //       borderRadius: BorderRadius.circular(3)),
-                        Text("Dec 01/2023",
-                            style: TextStyle(color: Colors.grey, fontSize: 12)),
-                        // ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        // Container(
-                        //   padding:
-                        //       EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                        //   decoration: BoxDecoration(
-                        //       color: Colors.lightBlue,
-                        //       borderRadius: BorderRadius.circular(3)),
-                        // Text(" 10:30 AM",
-                        //     style: TextStyle(color: Colors.grey, fontSize: 12)),
-                        // ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Row(
-                      children: [
-                        // const Icon(
-                        //   Iconsax.dollar_circle,
-                        //   color: Colors.grey,
-                        //   size: 10,
-                        // ),
-                        // const SizedBox(
-                        //   width: 3,
-                        // ),
-                      ],
+                    Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 20,
+                            width: 80,
+                            decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(3)),
+                            child: const Center(
+                              child: Text("Donate Now",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 10)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

@@ -4,6 +4,7 @@ import 'package:ssen_user/screens/components/announcement.dart';
 import 'package:ssen_user/screens/components/home.dart';
 import 'package:ssen_user/screens/components/subscribers.dart';
 import 'package:ssen_user/screens/profile.dart';
+import 'package:ssen_user/screens/search/my_search_delegate.dart';
 import 'package:ssen_user/screens/setting.dart';
 import 'package:ssen_user/screens/terms%20and%20condition.dart';
 import 'package:ssen_user/utils/constants.dart';
@@ -787,6 +788,10 @@ class _DesktopResponsiveState extends State<DesktopResponsive> {
                           decoration: TextDecoration.none),
                     ),
                     Expanded(child: SizedBox()),
+                    SearchItem(),
+                    SizedBox(
+                      width: 20,
+                    ),
                     Container(
                       width: 40,
                       height: 40,

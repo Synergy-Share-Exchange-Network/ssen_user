@@ -25,44 +25,45 @@ class SecondaryProfileWidget extends StatelessWidget {
           height: 110,
           width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.all(5),
-          child: Row(
+          child: Column(
             children: [
               const SizedBox(
                 width: 10,
               ),
-              Container(
-                child: CircleAvatar(
-                  radius: 40,
-                  backgroundImage: AssetImage('asset/logo_image/goat.jpg'),
-                ),
+              Row(
+                children: [
+                  CircleAvatar(
+                    radius: 18,
+                    backgroundImage: AssetImage('asset/logo_image/goat.jpg'),
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  Text(
+                    "Dawit Negus",
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ],
               ),
               SizedBox(
                 width: 15,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 3),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Dawit Negus",
-                        style: STextTheme.lightTextTheme.headlineSmall),
-                    Row(
-                      children: [
-                        const Icon(
-                          Iconsax.location,
-                          // color: Colors.black,
-                          size: 12,
-                        ),
-                        const SizedBox(
-                          width: 3,
-                        ),
-                        Text(
-                          "Addis Ababa, Ethiopia",
-                          // style: STextTheme.lightTextTheme.bodySmall
-                          //     ?.copyWith(color: Colors.blue),
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ],
+                    SizedBox(
+                      height: 2,
+                    ),
+                    Text(
+                      "ashewa technology",
+                      // style: STextTheme.lightTextTheme.bodySmall
+                      //     ?.copyWith(color: Colors.blue),
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -80,7 +81,7 @@ class SecondaryProfileWidget extends StatelessWidget {
                               width: 3,
                             ),
                             Text(
-                              "10k+ shares",
+                              "10k+ shares to sell ",
                               style: STextTheme.lightTextTheme.bodySmall!
                                   .copyWith(color: Colors.blue),
                             ),
@@ -100,7 +101,7 @@ class SecondaryProfileWidget extends StatelessWidget {
                               width: 3,
                             ),
                             Text(
-                              "1M Invested",
+                              "200 birr unit price",
                               style: STextTheme.lightTextTheme.bodySmall!
                                   .copyWith(color: Colors.blue),
                             ),

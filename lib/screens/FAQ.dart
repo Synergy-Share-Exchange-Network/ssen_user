@@ -72,83 +72,152 @@ class Faq extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (MediaQuery.of(context).size.width > phoneSize)
-              Container(
-                color: Colors.black,
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width - 650,
-              ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      body: MediaQuery.of(context).size.width > phoneSize
+          ? SingleChildScrollView(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    "Frequently Asked Questions",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 3,
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
                   Container(
-                    child: Text(
-                      "General",
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 18,
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width - 1000,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("asset/logo_image/faq.jpg"))),
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      // ignore: prefer_const_literals_to_create_immutables
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(
+                          "Frequently Asked Questions",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 3,
+                        ),
+                        SizedBox(
+                          height: 18,
+                        ),
+                        Container(
+                          child: Text(
+                            "General",
+                            style: TextStyle(color: Colors.grey, fontSize: 20),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 18,
+                        ),
                         FaqElementWidget(faq: faq),
-                        FaqElementWidget(faq: faq2),
-                        FaqElementWidget(faq: faq3),
-                        FaqElementWidget(faq: faq4),
-                        FaqElementWidget(faq: faq5),
-                        FaqElementWidget(faq: faq),
+                        // Container(
+                        //   width: MediaQuery.of(context).size.width,
+                        //   child: Column(
+                        //     mainAxisAlignment: MainAxisAlignment.start,
+                        //     crossAxisAlignment: CrossAxisAlignment.center,
+                        //     // ignore: prefer_const_literals_to_create_immutables
+                        //     children: [
+                        //       FaqElementWidget(faq: faq),
+                        //       FaqElementWidget(faq: faq2),
+                        //       FaqElementWidget(faq: faq3),
+                        //       FaqElementWidget(faq: faq4),
+                        //       FaqElementWidget(faq: faq5),
+                        //       FaqElementWidget(faq: faq),
 
-                        // FaqElementWidget(questions: faq.title),
-                        // FaqElementWidget(
-                        //     questions: "How does the stock market work?"),
-                        // const FaqElementWidget(
-                        //     questions: "What factors can affect stock prices?"),
-                        // FaqElementWidget(
-                        //     questions:
-                        //         "What is the difference between stocks, bonds, and mutual funds?What is the difference between stocks, b"),
-                        // FaqElementWidget(
-                        //     questions: "How do you buy and sell stocks?"),
-                        // FaqElementWidget(
-                        //     questions:
-                        //         "what are the main functions of stock market?"),
-                        // FaqElementWidget(
-                        //     questions: "How does the stock market work?"),
-                        // FaqElementWidget(
-                        //     questions: "What factors can affect stock prices?"),
+                        //       // FaqElementWidget(questions: faq.title),
+                        //       // FaqElementWidget(
+                        //       //     questions: "How does the stock market work?"),
+                        //       // const FaqElementWidget(
+                        //       //     questions: "What factors can affect stock prices?"),
+                        //       // FaqElementWidget(
+                        //       //     questions:
+                        //       //         "What is the difference between stocks, bonds, and mutual funds?What is the difference between stocks, b"),
+                        //       // FaqElementWidget(
+                        //       //     questions: "How do you buy and sell stocks?"),
+                        //       // FaqElementWidget(
+                        //       //     questions:
+                        //       //         "what are the main functions of stock market?"),
+                        //       // FaqElementWidget(
+                        //       //     questions: "How does the stock market work?"),
+                        //       // FaqElementWidget(
+                        //       //     questions: "What factors can affect stock prices?"),
+                        //     ],
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
                 ],
               ),
+            )
+          : SingleChildScrollView(
+              child: Container(
+                width: 400,
+                margin: EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Frequently Asked Questions",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Container(
+                      child: Text(
+                        "General",
+                        style: TextStyle(color: Colors.grey, fontSize: 20),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          FaqElementWidget(faq: faq),
+                          FaqElementWidget(faq: faq2),
+                          FaqElementWidget(faq: faq3),
+                          FaqElementWidget(faq: faq4),
+                          FaqElementWidget(faq: faq5),
+                          FaqElementWidget(faq: faq),
+
+                          // FaqElementWidget(questions: faq.title),
+                          // FaqElementWidget(
+                          //     questions: "How does the stock market work?"),
+                          // const FaqElementWidget(
+                          //     questions: "What factors can affect stock prices?"),
+                          // FaqElementWidget(
+                          //     questions:
+                          //         "What is the difference between stocks, bonds, and mutual funds?What is the difference between stocks, b"),
+                          // FaqElementWidget(
+                          //     questions: "How do you buy and sell stocks?"),
+                          // FaqElementWidget(
+                          //     questions:
+                          //         "what are the main functions of stock market?"),
+                          // FaqElementWidget(
+                          //     questions: "How does the stock market work?"),
+                          // FaqElementWidget(
+                          //     questions: "What factors can affect stock prices?"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ],
-        ),
-      ),
     );
   }
 }

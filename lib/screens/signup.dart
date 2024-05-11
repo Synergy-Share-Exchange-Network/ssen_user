@@ -1,13 +1,10 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:ssen_user/Screens/OTP_verification.dart';
+import 'package:ssen_user/screens/OTP.dart';
 import 'package:ssen_user/utils/constants.dart';
 import 'package:ssen_user/utils/constants/size.dart';
 import 'package:ssen_user/utils/constants/text_string.dart';
-
-import '../utils/helper_function.dart';
+import 'package:ssen_user/utils/helper_function.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -26,9 +23,12 @@ class SignUp extends StatelessWidget {
           children: [
             if (MediaQuery.of(context).size.width > phoneSize)
               Container(
-                color: Colors.black,
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width - 400,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('asset/signup.jpg'))),
               ),
             Container(
               width: 400,
@@ -164,8 +164,7 @@ class SignUp extends StatelessWidget {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) =>
-                                                OtpVerfication()));
+                                            builder: (context) => OTP()));
                                   },
                                   child: Text('Create Account')))
                         ],

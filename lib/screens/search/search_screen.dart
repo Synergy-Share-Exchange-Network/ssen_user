@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:ssen_user/services/theme/text_theme.dart';
-import 'package:ssen_user/utils/constants/colors.dart';
-import 'package:ssen_user/utils/constants/image_Strings.dart';
-import 'package:ssen_user/utils/helper_function.dart';
-import 'package:ssen_user/widget/company_profile_widget.dart';
-import 'package:ssen_user/widget/subscription_widget.dart';
+
+import '../../widget/Search Widget/searched_product_card.dart';
+import '../../widget/Search Widget/searched_shop_card.dart';
+import '../../widget/Search Widget/select_search_catagory_chip.dart';
 
 class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
+  const SearchScreen({super.key, required this.query});
+  static const route = "search_screen";
+  final String query;
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -17,217 +16,164 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    bool isDark = SHelperFunction.isDarkMode(context);
-
+    bool isProduct = false;
+    bool isAll = false;
     return Scaffold(
-      appBar: AppBar(
-        actions: const [
-          // Icon(Iconsax.notification),
-          // SizedBox(
-          //   width: 10,
-          // ),
-          Icon(Iconsax.close_circle),
-          SizedBox(
-            width: 20,
-          )
-        ],
-        backgroundColor: (!isDark) ? SColors.lighGrey : SColors.homePageNavBar,
-        leading: IconButton(
-            onPressed: () {
-              // Navigator.pop(context);
-            },
-            icon: const Icon(Icons.arrow_back_ios)),
-
-        // elevation: 1,
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
-                // width: MediaQuery.of(context).size.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
-                    CustomChip(
-                      icon: Iconsax.align_horizontally,
-                      text: 'share',
+      // appBar: AppBar(
+      //   leading: AppBarButton2(
+      //     callback: () => Navigator.pop(context),
+      //     icon: Icons.arrow_back_ios_new_outlined,
+      //   ),
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      // ),
+      body: Container(
+        padding: const EdgeInsets.all(15),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  SelectSearchCatagoryChip(
+                      title: "ALL",
                       isSelected: true,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    CustomChip(
-                      icon: Iconsax.people,
-                      text: 'Public',
+                      icon: Icons.format_align_left_sharp),
+                  SelectSearchCatagoryChip(
+                      title: "Product",
                       isSelected: false,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    CustomChip(
-                      icon: Iconsax.document1,
-                      text: 'Dontaion',
-                      isSelected: false,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    CustomChip(
-                      icon: Iconsax.personalcard,
-                      text: 'Secondary',
-                      isSelected: false,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    CustomChip(
-                      icon: Iconsax.book,
-                      text: 'news',
-                      isSelected: false,
-                    ),
-
-                    // CustomChip(title: "All"),
-                    // CustomChip(title: "T-shert"),
-                    // CustomChip(title: "Pants"),
-                    // CustomChip(title: "Human Hair"),
-                    // CustomChip(title: "Foods"),
-                    // CustomChip(title: "Book"),
-                    // CustomChip(title: "More"),
-                  ],
-                ),
-              ),
-            ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  CompanyProfileWidget(),
-                  CompanyProfileWidget(),
-                  CompanyProfileWidget(),
-                  CompanyProfileWidget(),
-                  CompanyProfileWidget(),
-                  CompanyProfileWidget(),
+                      icon: Icons.auto_awesome_mosaic_outlined),
+                  SelectSearchCatagoryChip(
+                    title: "Shop",
+                    isSelected: false,
+                    icon: Icons.store,
+                  )
                 ],
               ),
-            )
-            // Column(
-            //   children: [
-            //     // Product(
-            //     //   product: car,
-            //     //   shopOwner: seller,
-            //     // ),
-            //     // Product(
-            //     //   product: car,
-            //     //   shopOwner: seller,
-            //     // ),
-            //     // Product(
-            //     //   product: car,
-            //     //   shopOwner: seller,
-            //     // ),
-            //     // Product(
-            //     //   product: car,
-            //     //   shopOwner: seller,
-            //     // ),
-            //     // Product(
-            //     //   product: car,
-            //     //   shopOwner: seller,
-            //     // ),
-            //   ],
-            // )
-          ],
+              const SizedBox(
+                height: 25,
+              ),
+              InkWell(
+                onTap: () {
+                  var shopSortOption = [
+                    'Popularity',
+                    'Date',
+                    'Rating',
+                    'location'
+                  ];
+                  var productSortOption = [
+                    'Popularity',
+                    'price',
+                    'Date',
+                    'Rating',
+                    'location'
+                  ];
+                  String shopSortOptionvalue = 'Popularity';
+                  String productSortOptionvalue = 'Popularity';
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: (isAll == false && isProduct == true)
+                            ? const Text('Sort Product')
+                            : const Text('Sort Shop'),
+                        content: Container(
+                          height: 120,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Based On'),
+                              const SizedBox(
+                                width: 50,
+                              ),
+                              SizedBox(
+                                height: 50,
+                                width: 150,
+                                child: DropdownButton(
+                                  value: (isAll == false && isProduct == true)
+                                      ? productSortOptionvalue
+                                      : shopSortOptionvalue,
+                                  items: (isAll == false && isProduct == true)
+                                      ? productSortOption.map((String items) {
+                                          return DropdownMenuItem(
+                                            value: items,
+                                            child: Text(items),
+                                          );
+                                        }).toList()
+                                      : shopSortOption.map((String items) {
+                                          return DropdownMenuItem(
+                                            value: items,
+                                            child: Text(items),
+                                          );
+                                        }).toList(),
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      shopSortOptionvalue = newValue!;
+                                    });
+                                  },
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: const [
+                                  SelectSearchCatagoryChipForLargeText(
+                                      title: 'Decreasing',
+                                      isSelected: false,
+                                      icon: Icons.arrow_downward),
+                                  SelectSearchCatagoryChipForLargeText(
+                                      title: 'Increasing',
+                                      isSelected: true,
+                                      icon: Icons.arrow_upward),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(
+                                  context); // This closes the dialog when the button is pressed.
+                            },
+                            child: Text('Save'),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(
+                                  context); // This closes the dialog when the button is pressed.
+                            },
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: const SelectSearchCatagoryChip(
+                      title: "Sort", isSelected: true, icon: Icons.sort),
+                ),
+              ),
+              const SearchProductCard(),
+              const SearchShopCard(),
+              const SearchProductCard(),
+              const SearchShopCard(),
+              const SearchProductCard(),
+              const SearchShopCard(),
+              const SearchProductCard(),
+              const SearchShopCard(),
+              const SearchProductCard(),
+              const SearchShopCard(),
+              const SearchProductCard(),
+              const SearchShopCard(),
+            ],
+          ),
         ),
       ),
-    );
-  }
-}
-
-class CustomChip extends StatelessWidget {
-  const CustomChip({
-    Key? key,
-    required this.text,
-    required this.icon,
-    required this.isSelected,
-  }) : super(key: key);
-  final String text;
-  final IconData icon;
-  final bool isSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 110,
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          primary: (isSelected) ? SColors.primary : Colors.white,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-              side: BorderSide(
-                  color: SColors.primaryColor) // Adjust the value as needed
-              ),
-          padding: EdgeInsets.all(
-              16.0), // Adjust the padding to increase the height and width
-        ),
-        child: Row(
-          children: [
-            Icon(
-              icon,
-              color: (isSelected) ? Colors.white : SColors.primary,
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Container(
-              width: 48,
-              child: Text(
-                text,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    color: (isSelected) ? Colors.white : SColors.primary,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class MiniCompanySub extends StatelessWidget {
-  const MiniCompanySub({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.fromLTRB(5, 10, 5, 0),
-      width: 60,
-      // height: 80,
-      child: Column(children: [
-        Container(
-          width: 50,
-          height: 50,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(color: SColors.primary, width: 2.0),
-              image: const DecorationImage(
-                  fit: BoxFit.cover, image: AssetImage(SImages.lightAppLogo))),
-        ),
-        // const Expanded(flex: 1, child: SizedBox()),
-        const SizedBox(
-          width: 10,
-        ),
-
-        const Text(
-          "Absinnia Bank",
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(fontWeight: FontWeight.normal),
-        ),
-      ]),
     );
   }
 }

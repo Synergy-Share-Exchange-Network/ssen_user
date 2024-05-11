@@ -22,9 +22,12 @@ class LoginScreen extends StatelessWidget {
           children: [
             if (MediaQuery.of(context).size.width > phoneSize)
               Container(
-                color: Colors.black,
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width - 400,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('asset/login.jpg'))),
               ),
             Container(
               width: 400,

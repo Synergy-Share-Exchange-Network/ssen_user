@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:ssen_user/services/theme/text_theme.dart';
 import 'package:ssen_user/utils/constants/colors.dart';
 
 import '../screens/share_detail.dart';
 import '../screens/state pages/company_profile.dart';
+import '../utils/constants.dart';
+import 'analytics/graph1.dart';
+import 'analytics/graph_share_widget.dart';
 
 class ShareWidget extends StatelessWidget {
   const ShareWidget({Key? key}) : super(key: key);
@@ -60,8 +64,27 @@ class ShareWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Habesha Breweries ",
-                        style: STextTheme.lightTextTheme.headlineSmall),
+                    Row(
+                      children: [
+                        Text("Habesha Breweries ",
+                            style: STextTheme.lightTextTheme.headlineSmall),
+                        SizedBox(
+                          width: (MediaQuery.of(context).size.width > phoneSize)
+                              ? 200
+                              : 50,
+                        ),
+                        Container(
+                            height:
+                                (MediaQuery.of(context).size.width > phoneSize)
+                                    ? 30
+                                    : 30,
+                            width:
+                                (MediaQuery.of(context).size.width > phoneSize)
+                                    ? 100
+                                    : 43,
+                            child: LineChartgraphShare())
+                      ],
+                    ),
                     Row(
                       children: [
                         const Icon(
@@ -85,53 +108,33 @@ class ShareWidget extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        // Container(
-                        //   padding:
-                        //       EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                        //   decoration: BoxDecoration(
-                        //       color: Colors.lightBlue,
-                        //       borderRadius: BorderRadius.circular(3)),
-                        Text("Dec 01/2023",
-                            style: TextStyle(color: Colors.grey, fontSize: 12)),
-                        // ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        // Container(
-                        //   padding:
-                        //       EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                        //   decoration: BoxDecoration(
-                        //       color: Colors.lightBlue,
-                        //       borderRadius: BorderRadius.circular(3)),
-                        // Text(" 10:30 AM",
-                        //     style: TextStyle(color: Colors.grey, fontSize: 12)),
-                        // ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Row(
-                      children: [
-                        // const Icon(
-                        //   Iconsax.dollar_circle,
-                        //   color: Colors.grey,
-                        //   size: 10,
-                        // ),
-                        // const SizedBox(
-                        //   width: 3,
-                        // ),
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 151, 213, 242),
-                              borderRadius: BorderRadius.circular(3)),
-                          child: Text("latest price: Br 500",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 12)),
+                          width: (MediaQuery.of(context).size.width > phoneSize)
+                              ? 550
+                              : 270,
+                          child: LinearPercentIndicator(
+                            animation: true,
+                            animationDuration: 2000,
+                            lineHeight: 6,
+                            percent: 0.8,
+                            progressColor: Colors.green,
+                            backgroundColor: Colors.green.shade200,
+                          ),
                         ),
                       ],
+                    ),
+                    // ),
+                    SizedBox(
+                      height: 10,
+                    ),
+
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 151, 213, 242),
+                          borderRadius: BorderRadius.circular(3)),
+                      child: Text("latest price: Br 500",
+                          style: TextStyle(color: Colors.white, fontSize: 12)),
                     ),
                   ],
                 ),
